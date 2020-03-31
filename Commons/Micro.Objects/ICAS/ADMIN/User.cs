@@ -2,6 +2,7 @@
 
 namespace Micro.Objects.ICAS.ADMIN
 {
+    
 	[Serializable]
 	public class User
 	{
@@ -65,7 +66,7 @@ namespace Micro.Objects.ICAS.ADMIN
                 string[] arrName;
                 string firstName;
 
-                if (this.UserReferenceName.Contains(" ") == true)
+                if ((!(this.UserReferenceName == null)) && (this.UserReferenceName.Contains(" ") == true))
                 {
                     arrName = this.UserReferenceName.ToString().Split(' ');
                     firstName = string.Format("{0} {1}",arrName[0], arrName[1]);
@@ -252,34 +253,41 @@ namespace Micro.Objects.ICAS.ADMIN
 		}
 	}
 
-	//[Serializable]
-	//public class UserSetting
-	//{
-	//    public int UserSettingID
-	//    {
-	//        get;
-	//        set;
-	//    }
-	//    public int UserID
-	//    {
-	//        get;
-	//        set;
-	//    }
+    //[Serializable]
+    //public class UserSetting
+    //{
+    //    public int UserSettingID
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public int UserID
+    //    {
+    //        get;
+    //        set;
+    //    }
 
-	//    public int KeyID
-	//    {
-	//        get;
-	//        set;
-	//    }
-	//    public string KeyName
-	//    {
-	//        get;
-	//        set;
-	//    }
-	//    public string KeyValue
-	//    {
-	//        get;
-	//        set;
-	//    }
-	//}
+    //    public int KeyID
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string KeyName
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string KeyValue
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //}
+
+    public class UserLogin
+    {
+        public string UserName { get; set; }
+        public string UserPassword { get; set; }
+    };
+
 }

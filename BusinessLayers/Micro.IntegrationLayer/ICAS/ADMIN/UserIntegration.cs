@@ -117,7 +117,7 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
 				TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? null : dRowUser["EmailID"].ToString().ToLower());
 
                 TheUser.UserPhoto_SmallSize = ((dRowUser["UserPhoto_SmallSize"] == null) ? null : dRowUser["UserPhoto_SmallSize"].ToString());
-                TheUser.UserPhoto_MediumSize = ((dRowUser["UserPhoto_MediumSize"] == null) ? null : dRowUser["UserPhoto_MediumSize"].ToString());
+                //TheUser.UserPhoto_MediumSize = ((dRowUser["UserPhoto_MediumSize"] == null) ? null : dRowUser["UserPhoto_MediumSize"].ToString());
                 //Company c = Micro.DataAccessLayer.Administration.CompanyDataAccess.GetInstance.GetCompanyByComapnyID(TheUser.CompanyID);
 			}
 

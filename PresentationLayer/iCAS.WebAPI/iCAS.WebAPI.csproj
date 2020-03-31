@@ -173,6 +173,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -267,6 +268,10 @@
     <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
       <Project>{f565a960-ec2a-4b06-9a73-008ff9d03fc5}</Project>
       <Name>iCAS.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.ErrorLogger\iCAS.ErrorLogger.csproj">
+      <Project>{a6bdfe64-d74b-414e-bc48-3d4d96918bee}</Project>
+      <Name>iCAS.ErrorLogger</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
       <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
