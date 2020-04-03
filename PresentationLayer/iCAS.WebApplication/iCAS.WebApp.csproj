@@ -1040,6 +1040,7 @@
     <Content Include="Themes\Profiles\Employee Profile-10-Photo.jpg" />
     <Content Include="Themes\Profiles\Temp\Employee Profile-1-Photo.jpg" />
     <Content Include="Upload\Approvals.aspx" />
+    <Content Include="Upload\VideoGallery.aspx" />
     <Content Include="Upload\PhotoGallery.aspx" />
     <Content Include="Upload\WorldBank.aspx" />
     <Content Include="Upload\MoM.aspx" />
@@ -2406,6 +2407,13 @@
     </Compile>
     <Compile Include="Upload\Approvals.aspx.designer.cs">
       <DependentUpon>Approvals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\VideoGallery.aspx.cs">
+      <DependentUpon>VideoGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\VideoGallery.aspx.designer.cs">
+      <DependentUpon>VideoGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Upload\PhotoGallery.aspx.cs">
       <DependentUpon>PhotoGallery.aspx</DependentUpon>

@@ -10,7 +10,7 @@
 namespace Micro.WebApplication.UPLOAD {
     
     
-    public partial class PhotoGallery {
+    public partial class VideoGallery {
         
         /// <summary>
         /// UpdatePanel_Establishment control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/App_MasterPages/MicroERP-MasterPage.Master" AutoEventWireup="true" CodeBehind="PhotoGallery.aspx.cs" Inherits="Micro.WebApplication.UPLOAD.PhotoGallery" ValidateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/App_MasterPages/MicroERP-MasterPage.Master" AutoEventWireup="true" CodeBehind="VideoGallery.aspx.cs" Inherits="Micro.WebApplication.UPLOAD.VideoGallery" ValidateRequest="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Assembly="Micro.Commons" Namespace="Micro.Commons" TagPrefix="IAControl" %>
@@ -189,7 +189,7 @@
                     }
             </style>
             <h1 class="PageTitle">
-                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage/Upload Your Photo Gallery" />
+                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Video Gallery" />
             </h1>
 
             <asp:MultiView ID="Establishment_multi" runat="server">
@@ -204,7 +204,7 @@
                         <li class="Formvalue InVisible">
 
                             <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="Y" Selected="True"> Photo Gallery</asp:ListItem>
+                                <asp:ListItem Value="V" Selected="True"> Video Gallery</asp:ListItem>
                             </asp:RadioButtonList>
 
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
@@ -214,7 +214,7 @@
 
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title of the Photo: " />
+                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the video Link (Youtube/Facebook) : " />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
@@ -257,11 +257,11 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the Photo Gallery description! it can't left blank." />
                         </li>
 
-                        <div style="display: block; border-top: solid 1px #808080; margin: 10px 0px 40px 0px; font-size: 15px;">
+                        <div style="display: none; border-top: solid 1px #808080; margin: 10px 0px 40px 0px; font-size: 15px;">
 
 
                             <li class="Formlabel">
-                                <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only jpg /jpeg / png files):" />
+                                <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only pdf / word files):" />
                             </li>
                             <li class="Formvalue">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -340,7 +340,7 @@
                         <li class="FValue">
                             <asp:Label ID="lbl_TheMessage" runat="server" Text=""></asp:Label></li>
 
-                        <%--<li class="FLabel">Photo Uploads Date:</li>
+                       <%-- <li class="FLabel">Photo Uploads Date:</li>
                         <li class="FValue">.</li>
 
 
