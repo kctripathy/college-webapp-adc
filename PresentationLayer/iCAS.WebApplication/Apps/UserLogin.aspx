@@ -49,7 +49,7 @@
                         </li>
                         <li>
                             
-                            <asp:RadioButtonList runat="server" AutoPostBack="true" ID="rbList_UserType" RepeatDirection="Horizontal" OnSelectedIndexChanged="rbList_UserType_SelectedIndexChanged">
+                            <asp:RadioButtonList runat="server" AutoPostBack="true" ID="rbList_UserType" RepeatDirection="Vertical" OnSelectedIndexChanged="rbList_UserType_SelectedIndexChanged">
                                 <asp:ListItem Text="Alumni" Value="6" Selected="False" />
                                 <asp:ListItem Text="Student" Value="4" Selected="False" />
                                 <asp:ListItem Text="Staff" Value="2" Selected="False" />

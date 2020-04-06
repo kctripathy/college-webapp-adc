@@ -294,8 +294,8 @@ namespace TCon.iCAS.WebApplication.APPS
                 {
                     lit_Message.Text = FormMessage.ToString();
                     lit_TheDialogMessage.Text = FormMessage.ToString();
-                    dialog_Message.Title = "Login Error";
-                    dialog_Message.Show();
+                    //dialog_Message.Title = "Login Error";
+                    //dialog_Message.Show();
                 }
                 return ReturnValue;
             }
@@ -305,8 +305,8 @@ namespace TCon.iCAS.WebApplication.APPS
                 //Response.Write(ex.Message.ToString());
                 lit_Message.Text = ex.Message.ToString();
                 lit_TheDialogMessage.Text = ex.Message.ToString();
-                dialog_Message.Title = "Login Error";
-                dialog_Message.Show();
+                //dialog_Message.Title = "Login Error";
+                //dialog_Message.Show();
                 //throw (new Exception("Login Error" + ex.Message.ToString()));
                 return false;
             }

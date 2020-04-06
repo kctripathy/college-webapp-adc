@@ -34,7 +34,7 @@ namespace LTPL.ICAS.WebApplication.App_UserControls.ICAS
                                                     ConfigurationManager.AppSettings["ApplicationName"].ToString(), 
                                                     AppVer);
                 }
-                lit_CopyrightSignature.Text = string.Concat(lit_CopyrightSignature.Text, "<span id='accessFlag'>Developed By: Kishor Tripathy & Team. email : kctripathy@gmail.com , phone: +91 94375-22845 </span>");
+                lit_CopyrightSignature.Text = string.Concat(lit_CopyrightSignature.Text, "<span id='accessFlag'>Developed By: RITES Infotech, Jagannath Prasad, Ganjam (Odisha)</span>");
             }
 
         }

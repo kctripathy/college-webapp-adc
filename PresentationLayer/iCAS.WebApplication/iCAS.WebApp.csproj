@@ -952,6 +952,7 @@
     <Content Include="Themes\Default\CSS\Pages\SendSMS.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Students.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Alumni.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Upload\Publications.aspx.css" />
     <Content Include="Themes\Default\CSS\Responsive.css" />
     <Content Include="Themes\Default\Images\arrowsub.png" />
     <Content Include="Themes\Default\Images\BackgroundSubTitle_001.gif" />

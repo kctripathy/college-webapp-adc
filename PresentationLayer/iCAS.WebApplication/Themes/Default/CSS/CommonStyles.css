@@ -47,17 +47,17 @@
 
 
 
-#WebFooterAdmin
-{
-    color: #fff;
+#WebFooterAdmin {
+    color: #000;
     font-size: 8pt;
-    background-image: linear-gradient(#04519b, #044687 60%, #033769);
+    /*background-image: linear-gradient(#04519b, #044687 60%, #033769);*/
+    background-image: linear-gradient(#f9f304, #FFCC00 60%, #fffb00);
     border-bottom: 1px solid #022241;
     display: block;
     float: left;
     width: 100%;
     height: 35px;
-    margin: 0px auto;
+    margin: 20px auto;
     padding: 5px 0px;
     bottom: 0;
     display: block;
@@ -102,12 +102,11 @@
 
 .PageSubTitle
 {
-    background-color: #4b6c9e;
-    font-family: Lato, sans-serif;
+   font-family: Lato, sans-serif;
     font-size: 11pt;
     font-weight: bold;
     color: #191970;
-    background: #E2F0FF url(../Images/BackgroundSubTitle_001.gif) left 15px repeat-x;
+    /*background: #E2F0FF url(../Images/BackgroundSubTitle_001.gif) left 15px repeat-x;*/
 }
 
 #WebBody #PageContent_RightColumn ul li.PageSubTitle
@@ -143,19 +142,27 @@
 {
     display: block;
     float: left;
-    width: 100%;
+    width: 98%;
     text-align: right;
     margin-top: 0px;
+    margin-bottom: 5px;
 }
 
-    .FormButton_Top input
-    {
-        background-image: url(../Images/bg_Button_Default.gif);
-        background-repeat: repeat-x;
+    .FormButton_Top input {
+        /*background-image: url(../Images/bg_Button_Default.gif);
+        background-repeat: repeat-x;*/
         color: #080808;
         font-size: 1em;
-        padding: 5px;
+        padding: 10px 25px;
         font-weight: bold;
+        background: rgb(255,175,75);
+        background: -moz-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+        background: -webkit-gradient(left top, left bottom, color-stop(4%, rgb(255,175,75)), color-stop(12%, rgb(255,175,75)), color-stop(60%, rgb(255,193,29)), color-stop(76%, rgb(255,199,13)), color-stop(90%, rgb(255,204,0)));
+        background: -webkit-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+        background: -o-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+        background: -ms-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+        background: linear-gradient(to bottom, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ffcc00', GradientType=0 );
     }
 
 
@@ -387,6 +394,18 @@ displayGridNewsLi div table
 	font-weight: normal;
     text-align: center;
     font-family: Arial, sans-serif;
-    font-size: 8pt;
-    border-bottom: solid 1px navy;
+    font-size: 9pt;
+}
+
+.bg-primary,
+.btn-primary {
+    color: #000;
+    background: rgb(255,175,75);
+    background: -moz-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+    background: -webkit-gradient(left top, left bottom, color-stop(4%, rgb(255,175,75)), color-stop(12%, rgb(255,175,75)), color-stop(60%, rgb(255,193,29)), color-stop(76%, rgb(255,199,13)), color-stop(90%, rgb(255,204,0)));
+    background: -webkit-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+    background: -o-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+    background: -ms-linear-gradient(top, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+    background: linear-gradient(to bottom, rgb(255,175,75) 4%, rgb(255,175,75) 12%, rgb(255,193,29) 60%, rgb(255,199,13) 76%, rgb(255,204,0) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ffcc00', GradientType=0 );
 }

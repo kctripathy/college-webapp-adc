@@ -90,7 +90,7 @@
 						&nbsp;        
 					</div>
 				</div>
-				<div class="row" id="WebBodyContentICAS">
+				<div class="row" id="WebBodyContentICAS" style="display:none">
 					<div class="col-md-6">
 						<p>
 							Anchalika Degree College established in the year XXXX, affiliated to CHSE Odisha and Berhampur University. 
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 
-				<div id="WebZones" class="row">
+				<div id="WebZones" class="row"  style="display:none">
 					<div id="Div_Estb" class="col-lg-12 col-md-12 col-xs-12">
 						<div id="Div_ColoumnTwo_Establishments" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 							<suvram:UC_EstablishmentZone ID="ctrl_EstablishmentZone1" runat="server" />
@@ -125,13 +125,14 @@
 					</div>
 
 				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"   style="display:none">
 					<suvram:UC_LinksZone ID="UC_LinksZone1" runat="server" />
 				</div>
-
+                
 			</div>
 
 		</div>
+        <div style="height: 100px">&nbsp;</div>
 		<suvram:UC_WebFooter ID="ctrl_WebFooter" runat="server" />
 	</form>
 </body>

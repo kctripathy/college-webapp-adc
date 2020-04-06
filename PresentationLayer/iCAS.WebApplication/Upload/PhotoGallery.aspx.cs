@@ -72,6 +72,9 @@ namespace Micro.WebApplication.UPLOAD
 
             if (!IsPostBack && !IsCallback)
             {
+                txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy");
+                txt_Enddate.Text = DateTime.Now.AddYears(2).ToString("dd-MMM-yyyy");
+
                 Session["fileName"] = "NA";
                 Establishment_multi.SetActiveView(InputControls);
             }
@@ -160,7 +163,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void BindGridview()
         {
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("Y");
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("IMG");
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
         }
@@ -241,8 +244,8 @@ namespace Micro.WebApplication.UPLOAD
         {
             //rbl_EstablishmentTypeCode.ClearSelection();
             txt_NoticeTitle.Text = string.Empty;
-            txt_Startdate.Text = string.Empty;
-            txt_Enddate.Text = string.Empty;
+            //txt_Startdate.Text = string.Empty;
+            //txt_Enddate.Text = string.Empty;
             txt_Description.Text = string.Empty;
             lbl_FileUploadStatus.Text = string.Empty;
             Session["fileName"] = "";

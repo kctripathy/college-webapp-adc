@@ -17,7 +17,7 @@ namespace Micro.WebApplication.MicroERP
             HttpContext.Current.Session.Clear();
 
 
-			string theDefaultpage = string.Format("http://{0}/", ConfigurationManager.AppSettings["WebServerIP"]);
+			string theDefaultpage = string.Format("http://{0}/Apps/UserLogin.aspx", ConfigurationManager.AppSettings["WebServerIP"]);
 			Response.Redirect(theDefaultpage);
 		}
 	}

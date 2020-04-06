@@ -160,7 +160,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void BindGridview()
         {
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("M");
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("MoM");
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
         }

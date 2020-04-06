@@ -56,16 +56,16 @@ ul
 	#TheContainerICAS #WebContentICAS
 	{
 		width: 998px;
-		margin: 0px auto 0 auto;
+		margin: 20px auto 0 auto;
 		min-height: 100%;
 		height: auto;
 		background-color: #FFF;
-		border: double 1px #244D82;
+		border: double 1px #ccc;
 		background-repeat: no-repeat;
 		overflow: hidden;
 		padding-bottom: 5px;
 		/*background: lightcyan url(../../../Images/slides_tsdc/slide_2017_7.jpg) right 17px bottom 10px no-repeat;*/
-		background: #04164D url(../../../Images/TSDC-WEB-HEAD-80.jpg) left top no-repeat;
+		/*background: #04164D url(../../../Images/TSDC-WEB-HEAD-80.jpg) left top no-repeat;*/
 	}
 
 	#TheContainerICAS #WebHead

@@ -42,11 +42,15 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 }
                 else if (this.EstbTypeCode.Equals("M"))
                 {
-                    _typeCodeDesc = "Minutes of Meeting";
+                    _typeCodeDesc = "Media Release";
                 }
                 else if (this.EstbTypeCode.Equals("C"))
                 {
                     _typeCodeDesc = "Circular";
+                }
+                else if (this.EstbTypeCode.Equals("S"))
+                {
+                    _typeCodeDesc = "Syllabus";
                 }
                 else if (this.EstbTypeCode.Equals("R"))
                 {
@@ -88,13 +92,17 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Downloadable";
                 }
-                else if (this.EstbTypeCode.Equals("Y"))
+                else if (this.EstbTypeCode.Equals("IMG"))
                 {
                     _typeCodeDesc = "Photo";
                 }
-                else if (this.EstbTypeCode.Equals("V"))
+                else if (this.EstbTypeCode.Equals("VDO"))
                 {
                     _typeCodeDesc = "Video";
+                }
+                else if (this.EstbTypeCode.Equals("MoM"))
+                {
+                    _typeCodeDesc = "Minute of Meeting";
                 }
 
                 return _typeCodeDesc;

@@ -153,7 +153,7 @@
                     }
             </style>
             <h1 class="PageTitle">
-                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage / Upload MoM:" />
+                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Minutes of Meetings:" />
             </h1>
 
             <asp:MultiView ID="Establishment_multi" runat="server">
@@ -164,12 +164,11 @@
                             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" class="btn btn-primary btn-xs" />
                             <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" class="btn btn-primary btn-xs" />
                         </li>
-                        <li class="Formlabel">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Upload:" /></li>
-
-                        <li class="Formvalue">
+                        <li class="Formlabel" style="display:none">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Upload:" /></li>
+                        <li class="Formvalue"  style="display:none">
 
                             <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="M" Selected="True">Minutes of meetings</asp:ListItem>
+                                <asp:ListItem Value="MoM" Selected="True">Minutes of meetings</asp:ListItem>
                             </asp:RadioButtonList>
 
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
@@ -179,7 +178,7 @@
 
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Title of the MoM: " />
+                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Title of the Minutes of Meeting: " />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
@@ -233,7 +232,7 @@
                                     <ContentTemplate>
                                         <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="30px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-primary btn-xs" />
 
-                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
+                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary m-2 p-2" />
                                         <br />
                                         <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 

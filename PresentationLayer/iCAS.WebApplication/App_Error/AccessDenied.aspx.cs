@@ -33,7 +33,7 @@ or
                                     Thanking you,
                                     <br/><br/>
                                     <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{4}'>
-                                    Kishor Tripathy & Team
+                                    Team (IT)
                                     </a>
                                     <br/>
                                     <a href='http://{1}'>{0}</a>

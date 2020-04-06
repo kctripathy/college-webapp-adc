@@ -44,9 +44,9 @@
             display: block;
             float: left;
             width: 100%;
-            font-family: Verdana, Trebuchet MS;
+            font-family: 'Trebuchet MS', Verdana;
             font-size: 10pt;
-            background-color: lightgoldenrodyellow;
+            background-color: transparent;
             padding: 1%;
             overflow: auto;
         }
@@ -64,12 +64,24 @@
 
         .TreeViewStyle > div > div > table > tbody > tr > td > a
         {
-            color: green;
+            color: darkgreen;
+             font-size: 12px;
+        }
+        .TreeViewStyle > div > div > table > tbody > tr > td > a:hover
+        {
+            color: orangered;
+             font-size: 12px;
         }
 
         .TreeViewStyle > div > table > tbody > tr > td > a
         {
             color: blue;
+            font-size: 13px;
+        }
+        .TreeViewStyle > div > div > table > tbody > tr > td,
+        #TreeView1n0Nodes > table> tbody > tr > td
+        {
+            padding: 3px 0px;
         }
     </style>
 </head>

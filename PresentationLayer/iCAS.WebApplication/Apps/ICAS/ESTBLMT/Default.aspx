@@ -5,19 +5,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMicroERP" runat="server">
     <style type="text/css">
         @import "~/Content/Calendar.css";
-        .submitBtnClass
-        {
+
+        .submitBtnClass {
             margin: 0px 10px;
         }
-        .viewBtnClass
-        {
-            border: solid 1px red;
+
+        .viewBtnClass {
         }
-        .WatermarkCssClass
-        {
+
+        .WatermarkCssClass {
             color: darkgray;
         }
     </style>
+    <script type="text/javascript">
+        function onEstbTypeClick(e) {
+            var estbDesc;
+            var estbType = document.getElementById('h2EstablishmentType');
+            var titleLabel = document.getElementById('ContentPlaceHolderMicroERP_lbl_NoticeTitle');
+
+            switch (e.value) {
+                case 'N': estbDesc = 'Notice'; break;
+                case 'R': estbDesc = 'Recent Activity'; break;
+                case 'T': estbDesc = 'Tender'; break;
+                case 'C': estbDesc = 'Circular'; break;
+                case 'S': estbDesc = 'Syllabus'; break;
+                case 'M': estbDesc = "Media Release"; break;
+            }
+            estbType.innerHTML = estbDesc;
+            titleLabel.innerText = "Title of the  " + estbDesc + ": ";
+
+            return true;
+        }
+    </script>
     <asp:UpdatePanel ID="UpdatePanel_Establishment" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <h1 class="PageTitle">
@@ -28,28 +47,35 @@
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="Establishments">
+                        <li class="fullWidth text-center bg-warning p-2" style="margin-left: -10px; width: 99%; text-transform: uppercase">
+                            <h3 id="h2EstablishmentType">Recent Activity</h3>
+                        </li>
                         <li class="Formlabel">
                             <asp:Label ID="lbl_MessageType" runat="server" Text="Select Establishment Type:" />
                         </li>
 
                         <li class="Formvalue">
-                            <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="rbl_EstablishmentTypeCode_SelectedIndexChanged">
-                                <asp:ListItem Value="R" Selected="True">Recent Activities</asp:ListItem>
-                                <asp:ListItem Value="N">Notice</asp:ListItem>
-                                <asp:ListItem Value="T">Tender</asp:ListItem>
-                                <asp:ListItem Value="C">Circular</asp:ListItem>
-                                <asp:ListItem Value="W">World Bank Project</asp:ListItem>
-                                <asp:ListItem Value="M">Minutes of Meetings</asp:ListItem>
+                            <asp:RadioButtonList ID="rbl_EstablishmentTypeCode"
+                                name="EstablishmentTypeCode"
+                                runat="server"
+                                RepeatDirection="Horizontal"
+                                OnSelectedIndexChanged="rbl_EstablishmentTypeCode_SelectedIndexChanged">
+                                <asp:ListItem Value="R" Selected="True" onclick="javascript:onEstbTypeClick(this)">Recent Activity</asp:ListItem>
+                                <asp:ListItem Value="N" onclick="javascript:onEstbTypeClick(this)">Notice</asp:ListItem>
+                                <asp:ListItem Value="T" onClick="javascript:onEstbTypeClick(this)">Tender</asp:ListItem>
+                                <asp:ListItem Value="C" onClick="javascript:onEstbTypeClick(this)">Circular</asp:ListItem>
+                                <asp:ListItem Value="S" onClick="javascript:onEstbTypeClick(this)">Syllabus</asp:ListItem>
+                                <asp:ListItem Value="M" onClick="javascript:onEstbTypeClick(this)">Media Release</asp:ListItem>
                             </asp:RadioButtonList>
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
                         </li>
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title/Subject: " />
+                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title: " />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="80%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermarkTxt_NoticeTitle" TargetControlID="txt_NoticeTitle" WatermarkText="Example: World Bank Team visited our college" WatermarkCssClass="WatermarkCssClass" />
+                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermarkTxt_NoticeTitle" TargetControlID="txt_NoticeTitle" WatermarkText="Enter the title" WatermarkCssClass="WatermarkCssClass" />
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter!" SetFocusOnError="true" />
                         </li>
                         <li class="Formlabel">
@@ -81,8 +107,8 @@
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Description" runat="server" Height="81px" Width="400px" TextMode="MultiLine" /><br />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Enter Detail Description of the Notice/ Tender/ Circular/ Recent Activities Here" WatermarkCssClass="" />
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the establishment description! it can't left blank." />
+                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Enter Detail Description of the Notice/ Tender/ Circular/ Recent Activities Here" WatermarkCssClass="WatermarkCssClass" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the description!" />
                         </li>
                         <li class="Formlabel">
                             <asp:Label ID="Label1" runat="server" Text="File to Upload:" />
@@ -92,7 +118,7 @@
                                 <ContentTemplate>
                                     <asp:FileUpload runat="server" ID="fileUploadEstb" Width="63%" BorderStyle="Solid" BorderWidth="1" BorderColor="DarkGray" />
 
-                                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload_File" CausesValidation="true" />
+                                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload_File" CausesValidation="true" CssClass="btn btn-primary p-2 m-2" />
                                     <br />
                                     <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 
@@ -108,24 +134,24 @@
                             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" CssClass="submitBtnClass" />
                             <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" CssClass="viewBtnClass" />
                         </li>
-                        
+
                     </ul>
                 </asp:View>
                 <asp:View ID="view_gridView" runat="server">
                     <ul>
                         <li class="FormButton_Top">
-                            <asp:Literal runat="server" ID="lit_CurrentPage" Text="Current Page: 0/" />                           
+                            <asp:Literal runat="server" ID="lit_CurrentPage" Text="Current Page: 0/" />
                             <asp:Button ID="btn_AddNew" runat="server" Text="Add New" OnClick="btn_AddNew_Click" />
                         </li>
                         <li class="GridView">
-                            <asp:GridView ID="gridview_Establishment" runat="server" 
-                                AllowPaging="True" 
+                            <asp:GridView ID="gridview_Establishment" runat="server"
+                                AllowPaging="True"
                                 AllowSorting="True"
-                                 PageSize="30" 
-                                AutoGenerateColumns="False" 
+                                PageSize="30"
+                                AutoGenerateColumns="False"
                                 OnPageIndexChanging="gridview_Establishment_PageIndexChanging"
-                                OnRowCommand="gridview_Establishment_RowCommand" 
-                                OnRowDeleting="gridview_Establishment_RowDeleting" 
+                                OnRowCommand="gridview_Establishment_RowCommand"
+                                OnRowDeleting="gridview_Establishment_RowDeleting"
                                 OnRowEditing="gridview_Establishment_RowEditing">
                                 <AlternatingRowStyle CssClass="AlternatingRowStyle" />
                                 <RowStyle CssClass="RowStyle" />

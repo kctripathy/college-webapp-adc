@@ -9,13 +9,11 @@
 
         <ContentTemplate>
             <style type="text/css">
-                .RequiredField
-                {
+                .RequiredField {
                     color: red;
                 }
 
-                .Formlabel
-                {
+                .Formlabel {
                     font-weight: bold;
                     font-family: Lato, sans-serif;
                     font-size: 10pt;
@@ -23,102 +21,105 @@
                     margin-top: 10px;
                 }
 
-                #UploadStyleUL
-                {
+                #UploadStyleUL {
                     background-color: whitesmoke;
-                    padding: 4%;
+                    padding: 0px 4%;
                     width: 100%;
                 }
 
-                ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode
-                {
+                ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode {
                     display: block;
                     float: left;
                     width: 100%;
                     margin: 0;
                     padding: 0;
-                    background-color: lightblue;
                 }
 
-                    ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li
-                    {
+                    ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li {
                         display: block;
                         float: left;
                         width: 25%;
                         margin: 0 0 2px 0;
                         padding: 0;
                         text-align: center;
-
                     }
 
-                        ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li label
-                        {
+                        ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li label {
                             font-family: Lato, serif;
-                            font-size: 12pt;
+                            font-size: 1em;
                             font-weight: normal;
                             color: navy;
                         }
 
-                        ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li:nth-child(even)
-                        {
-                            background: linear-gradient(white 50%, lightblue 99%, #04a9fc); /*linear-gradient(skyblue, lightblue 98%, #04a9fc);*/
-                        }
 
-                        ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li:nth-child(odd)
-                        {
-                            background: linear-gradient(white 50%, lightblue 101%, #04a9fc);
-                        }
 
-                .TwentyFivePercent
-                {
+                .TwentyFivePercent {
                     width: 25%;
                     display: block;
                     float: left;
                     text-align: left;
                 }
 
-                .FormSpacer1
-                {
+                .FormSpacer1 {
                     display: block;
                     float: left;
                     height: 14px;
                     width: 100%;
-                    background-color: #fff;
+                    background-color: transparent;
                 }
 
-                .Formlabel
-                {
+                .Formlabel {
                     font-weight: normal;
                 }
 
-                .padding20pt
-                {
+                .padding20pt {
                     padding: 0px 20px;
                 }
             </style>
-            <h1 class="PageTitle">
+            <script type="text/javascript">
+                function onEstbTypeClick(e) {
+                    var estbDesc;
+                    var estbType = document.getElementById('h3EstablishmentType');
+                    var titleLabel = document.getElementById('ContentPlaceHolderMicroERP_lbl_NoticeTitle');
+
+                    switch (e.value) {
+                        case '1': estbDesc = 'Article'; break;
+                        case '2': estbDesc = 'Project Paper'; break;
+                        case '3': estbDesc = 'Book/Proceeding'; break;
+                        case '4': estbDesc = 'Award/Achievment'; break;
+                        case '5': estbDesc = 'Seminar Paper'; break;
+                        case '6': estbDesc = 'Study Material'; break;
+                        case '8': estbDesc = 'Staff Profile'; break;
+                        case '9': estbDesc = 'Downloadable'; break;
+                    }
+                    titleLabel.innerText = "Please Enter the Title of the  " + estbDesc + ": ";
+                    estbType.innerHTML = estbDesc;
+                    return true;
+                }
+            </script>
+            <h1 class="PageTitle" style="margin-top: -20px">
                 <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Publications" />
             </h1>
-
             <asp:MultiView ID="Establishment_multi" runat="server">
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="UploadStyleUL">
-
-                        <li class="Formlabel">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Please specify the Publication Type:" /></li>
+                        <li class="fullWidth text-center bg-warning" style="text-transform: uppercase">
+                            <h3 id="h3EstablishmentType">Article</h3>
+                        </li>
+                        <li class="Formlabel">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="" /></li>
 
                         <li class="Formvalue">
-
                             <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Vertical" RepeatLayout="UnorderedList">
-                                <asp:ListItem Value="1" Selected="True"> Article</asp:ListItem>
-                                <asp:ListItem Value="2">Project Paper</asp:ListItem>
-                                <asp:ListItem Value="3">Book/Proceeding</asp:ListItem>
-                                <asp:ListItem Value="4">Award/Achievment</asp:ListItem>
-                                <asp:ListItem Value="5">Seminar Paper</asp:ListItem>
-                                <asp:ListItem Value="6">Study Material</asp:ListItem>
+                                <asp:ListItem Value="1" Selected="True" onclick="javascript:onEstbTypeClick(this)"> Article</asp:ListItem>
+                                <asp:ListItem Value="2" onclick="javascript:onEstbTypeClick(this)">Project Paper</asp:ListItem>
+                                <asp:ListItem Value="3" onclick="javascript:onEstbTypeClick(this)">Book/Proceeding</asp:ListItem>
+                                <asp:ListItem Value="4" onclick="javascript:onEstbTypeClick(this)">Award/Achievment</asp:ListItem>
+                                <asp:ListItem Value="5" onclick="javascript:onEstbTypeClick(this)">Seminar Paper</asp:ListItem>
+                                <asp:ListItem Value="6" onclick="javascript:onEstbTypeClick(this)">Study Material</asp:ListItem>
                                 <%--<asp:ListItem Value="7">Hyperlink</asp:ListItem>--%>
-                                <asp:ListItem Value="8">Staff Profile</asp:ListItem>
-                                <asp:ListItem Value="9">Downloadable</asp:ListItem>
+                                <asp:ListItem Value="8" onclick="javascript:onEstbTypeClick(this)">Staff Profile</asp:ListItem>
+                                <asp:ListItem Value="9" onclick="javascript:onEstbTypeClick(this)">Downloadable</asp:ListItem>
                             </asp:RadioButtonList>
 
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
@@ -128,19 +129,19 @@
                         </li>
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title of the Publication: " />
+                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title of the Article: " />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Example: Global Warming in current era " WatermarkCssClass="" />
+                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText=" " WatermarkCssClass="" />
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter the title!" SetFocusOnError="true" />
                         </li>
 
-                        <li class="Formlabel TwentyFivePercent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Publication Date:" />
                         </li>
-                        <li class="Formvalue TwentyFivePercent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Startdate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Startdate" PopupButtonID="imgbtn_Startdate" CssClass="MicroCalendar" TargetControlID="txt_Startdate">
@@ -148,11 +149,11 @@
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
                         </li>
 
-                        <li class="Formlabel TwentyFivePercent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display Till Date:" />
                         </li>
-                        <li class="Formvalue TwentyFivePercent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Enddate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Enddate" PopupButtonID="imgbtn_Enddate" CssClass="MicroCalendar" TargetControlID="txt_Enddate" />

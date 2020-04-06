@@ -204,7 +204,7 @@
                         <li class="Formvalue InVisible">
 
                             <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="V" Selected="True"> Video Gallery</asp:ListItem>
+                                <asp:ListItem Value="VDO" Selected="True"> Video Gallery</asp:ListItem>
                             </asp:RadioButtonList>
 
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
@@ -212,21 +212,21 @@
 
 
 
-                        <li class="Formlabel">
+                        <li class="Formlabel FullWidth">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the video Link (Youtube/Facebook) : " />
                         </li>
-                        <li class="Formvalue">
+                        <li class="Formvalue FullWidth">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Title of the photo" WatermarkCssClass="" />
+                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Enter the link for the video" WatermarkCssClass="" />
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter the title!" SetFocusOnError="true" />
                         </li>
 
-                        <li class="Formlabel TwentyFive5Percent">
+                        <li class="Formlabel FullWidth">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Upload Date:" />
                         </li>
-                        <li class="Formvalue TwentyFive5Percent">
+                        <li class="Formvalue FullWidth">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Startdate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Startdate" PopupButtonID="imgbtn_Startdate" CssClass="MicroCalendar" TargetControlID="txt_Startdate">
@@ -234,11 +234,11 @@
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
                         </li>
 
-                        <li class="Formlabel TwentyFive5Percent">
+                        <li class="Formlabel FullWidth">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display Till:" />
                         </li>
-                        <li class="Formvalue TwentyFive5Percent">
+                        <li class="Formvalue FullWidth">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Enddate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Enddate" PopupButtonID="imgbtn_Enddate" CssClass="MicroCalendar" TargetControlID="txt_Enddate" />
@@ -257,7 +257,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the Photo Gallery description! it can't left blank." />
                         </li>
 
-                        <div style="display: none; border-top: solid 1px #808080; margin: 10px 0px 40px 0px; font-size: 15px;">
+                        <div style="display: none; margin: 10px 0px 40px 0px; font-size: 15px;">
 
 
                             <li class="Formlabel">

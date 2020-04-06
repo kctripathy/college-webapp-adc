@@ -72,6 +72,9 @@ namespace Micro.WebApplication.UPLOAD
 
             if (!IsPostBack && !IsCallback)
             {
+                txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy");
+                txt_Enddate.Text = DateTime.Now.AddYears(2).ToString("dd-MMM-yyyy");
+
                 Session["fileName"] = "NA";
                 Establishment_multi.SetActiveView(InputControls);
             }
@@ -160,7 +163,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void BindGridview()
         {
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("V");
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("VDO");
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
         }

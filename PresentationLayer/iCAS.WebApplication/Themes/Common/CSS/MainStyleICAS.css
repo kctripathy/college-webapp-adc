@@ -131,24 +131,25 @@ body
 
 #WebBody #PageContent_LeftColumn
 {
-	width: 20%;
+	width: 22%;
 	display: block;
 	float: left;
-	min-height: 540px;
+	min-height: 660px;
 	height: inherit;
 	padding: 0px;
-	background: url('http://tsdcollege.in/Themes/Common/Images/ICAS-LEFT.jpg') top left no-repeat;
-	background-size: 100% 100%;
+    background-color: #fcfcfc;
+	/*background: url('http://tsdcollege.in/Themes/Common/Images/ICAS-LEFT.jpg') top left no-repeat;
+	background-size: 100% 100%;*/
 }
 
 
 #WebBody #PageContent_RightColumn
 {
-	width: 80%;
+	width: 78%;
 	height: inherit;
 	display: block;
 	float: left;
-	padding: 10px;
+	padding: 5px;
 	overflow: auto;
 	border-left: solid 1px #ccc;
 	min-height: 660px;
@@ -162,6 +163,7 @@ body
 		padding: 0;
 		/*border: solid 1px red;*/
 		min-height: 25px;
+        padding-left: 10px;
 	}
 
 		#WebBody #PageContent_LeftColumn ul, #WebBody #PageContent_RightColumn ul#DialogBoxUL
