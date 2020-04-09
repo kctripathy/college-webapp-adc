@@ -507,7 +507,7 @@ namespace Micro.Commons
             if (IsImageFile(ImageFileExtension))
             {
                 ImageFileExtension = DefaultImageFileExtension;
-                ReturnValue = Path.Combine(profileUrl, string.Format("{0}-{1}-{2}{3}", settingKeyName, recordID, ValidImageFileName, ImageFileExtension));
+                ReturnValue = Path.Combine(profileUrl, string.Format("{0}_{1}_{2}{3}", settingKeyName.Replace(" ","_"), recordID, ValidImageFileName, ImageFileExtension));
             }
 
             return ReturnValue;
@@ -528,7 +528,7 @@ namespace Micro.Commons
             string ValidImageFileName = GetValidFileName(settingKeyDescription);
             string ImageFileExtension = DefaultImageFileExtension;
 
-            ReturnValue = Path.Combine(profileUrl, string.Format("{0}-{1}-{2}{3}", settingKeyName, recordID, ValidImageFileName, ImageFileExtension));
+            ReturnValue = Path.Combine(profileUrl, string.Format("{0}_{1}_{2}{3}", settingKeyName.Replace(" ","_"), recordID, ValidImageFileName, ImageFileExtension));
 
             return ReturnValue;
         }
@@ -727,14 +727,15 @@ namespace Micro.Commons
 
             string TheSalutation = theSalutation.SelectedItem.Text;
 
-            if (TheSalutation.Equals(MicroEnums.Salutations.Dr.GetStringValue()))
+            if (TheSalutation.Equals(MicroEnums.Salutations.Dr.GetStringValue()) ||
+                    TheSalutation.Equals(MicroEnums.Salutations.Prof.GetStringValue()))
             {
                 theGender.Text = TheGender;
                 theGender.Enabled = true;
             }
             else
             {
-                if (TheSalutation.Equals(MicroEnums.Salutations.Mr.GetStringValue()))
+                if (TheSalutation.Equals(MicroEnums.Salutations.Mr.GetStringValue()) )
                 {
                     TheGender = MicroEnums.Gender.Male.GetStringValue();
                     theHusbandName.ReadOnly = true;

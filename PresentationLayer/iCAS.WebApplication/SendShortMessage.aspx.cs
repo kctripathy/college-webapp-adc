@@ -61,9 +61,14 @@ namespace TCon.iCAS.WebApplication
 
         protected void btnShowRecords_Click(object sender, EventArgs e)
         {
+            DisplayRecordsUL.Attributes.Add("display", "block");
+
+            liStaffSection.Visible = chk_Staffs.Checked;
+            liStudentsSection.Visible = chk_Students.Checked;
             //============================================================
             if (chk_Staffs.Checked)
             {
+                
                 grdview_Staffs.DataSource = GetStaffList();
                 grdview_Staffs.DataBind();
             }
@@ -91,6 +96,7 @@ namespace TCon.iCAS.WebApplication
         protected void btnSendSMS_Click(object sender, EventArgs e)
         {
 
+            btnSendSMS.Enabled = false;
 
             int Ctr = 0;
             int sendSuccess = 0;
@@ -126,6 +132,9 @@ namespace TCon.iCAS.WebApplication
             }
 
             Ctr = 0;
+            int sendSuccessStudents = 0;
+            int sendFailureStudents = 0;
+
             for (int i = 0; i < grdview_Students.Rows.Count; i++)
             {
                 GridViewRow row = grdview_Students.Rows[i];
@@ -145,11 +154,11 @@ namespace TCon.iCAS.WebApplication
                         string status = SendSMSNow(phoneNumber, receipientName);
                         if (status == "OK")
                         {
-                            sendSuccess++;
+                            sendSuccessStudents++;
                         }
                         else
                         {
-                            sendFailure++;
+                            sendFailureStudents++;
                         }
                     }
                     Ctr++;
@@ -157,11 +166,15 @@ namespace TCon.iCAS.WebApplication
                 }
             }
             lblStatus.Text = "";
-            lblStatus.Text = string.Format("Successfully sent SMS to {0} person(s)", sendSuccess);
-            if (sendFailure > 0)
+            lblStatus.Text = string.Format("Successfully sent SMS to {0} Staffs & {1} Students", sendSuccess, sendSuccessStudents);
+            if (sendFailure > 0 || sendFailureStudents >0)
             {
-                lblStatus.Text += string.Format(" & failed to sent to {0} person(s)", sendFailure);
+                lblStatus.Text += string.Format("  --and- failed to sent to {0} Staffs & {1} students", sendFailure, sendFailureStudents);
             }
+
+            btnSendSMS.Enabled = true;
+            btnSendSMS.Attributes.Remove("display");
+            btnSendSMS.Attributes.Add("display", "block");
         }
 
         private List<Employee> GetStaffList()
@@ -340,6 +353,23 @@ namespace TCon.iCAS.WebApplication
         {
             
             SendSMSNow("9938046866", "Leelu");
+        }
+
+        protected void chkCheckAllStaffs_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as CheckBox).Checked)
+                ButtonSelectAllStaffs_Click(null, null);
+            else
+                ButtonUnSelectAllStaffs_Click(null, null);
+
+        }
+
+        protected void chkCheckAllStudents_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as CheckBox).Checked)
+                btnSelectAllStudents_Click(null, null);
+            else
+                btnUnSelectAll_Click(null, null);
         }
     }
 }

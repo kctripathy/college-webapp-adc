@@ -19,8 +19,9 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="~/Default.aspx" runat="server">
-            <img src="http://<%=ConfigurationManager.AppSettings["WebServerIP"] %>/Images/logo-50.png" alt="ADC" style="padding: 4px !important" />
+            <img src="http://<%=ConfigurationManager.AppSettings["WebServerIP"] %>/Images/logo-50.png" alt="ADC" style="padding: 4px !important" />            
         </a>
+        <h4 style="margin-top:10px; width: 400px; font-weight: 400"> AD COLLEGE - BACK OFFICE</h4>        
     </div>
     <div class="collapse navbar-collapse">
 

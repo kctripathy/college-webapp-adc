@@ -324,6 +324,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             theDesignation.DesignationDescription = txt_Designation.Text.ToString();
             theDesignation.RoleID = int.Parse(ddl_RoleDescription.SelectedValue);
             theDesignation.ReportingToDesignationID = int.Parse(ddl_ReportingTo.SelectedValue);
+            theDesignation.TeachingOrNonTeaching = optCategory.SelectedValue;
             ProcReturnValue = DesignationManagement.GetInstance.InsertDesignation(theDesignation);
             return ProcReturnValue;
         }

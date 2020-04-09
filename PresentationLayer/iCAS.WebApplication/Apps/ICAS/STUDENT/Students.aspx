@@ -324,7 +324,7 @@
                                     ControlToValidate="DropDown_StreamList" Display="Dynamic" SetFocusOnError="true" />
                             </li>
                         </ul>
-                        <ul class="StudentSubjects">
+                        <ul class="StudentSubjects StudentfullWidth">
                             <li class="PageSubTitle">
                                 <asp:Label runat="server" ID="lbl_Compulsorysubjects" Text="Compulsory Subjects" />
                             </li>
@@ -336,8 +336,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <asp:MultiView ID="MultiView_Subjects" runat="server">
-                            <asp:View ID="View_Elective" runat="server">
+                        <asp:MultiView ID="MultiView_Subjects" runat="server" Visible="false">
+                            <asp:View ID="View_Elective" runat="server" >
                                 <ul class="StudentFullWidth">
                                     <li class="PageSubTitle">
                                         <asp:Label runat="server" ID="lbl_ElectiveSubjects" Text="Elective Subjects" /><asp:Label runat="server" ID="lbl_MaxCount" Text="" />
@@ -379,8 +379,7 @@
                                 </ul>
                             </asp:View>
                         </asp:MultiView>
-                        <asp:Panel runat="server" class="StudentfullWidth" ID="PanelHonsPass"
-                            Visible="False">
+                        <asp:Panel runat="server" class="StudentfullWidth" ID="PanelHonsPass" Visible="False">
                             <ul class="Students">
                                 <li class="PageSubTitle">
                                     <asp:Label runat="server" ID="lbl_HonsSubjects" Text="Hons. Subjects" /><asp:Label runat="server" ID="lbl_HonsMaxCount" Text="" />

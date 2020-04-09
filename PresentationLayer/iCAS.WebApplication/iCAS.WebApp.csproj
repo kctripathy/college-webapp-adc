@@ -301,45 +301,6 @@
     <Content Include="Apps\ICAS\STUDENT\StudentFeesEntry.aspx" />
     <Content Include="Apps\UserRegister.aspx" />
     <Content Include="Apps\UserLogin.aspx" />
-    <Content Include="App_Data\ICAS\html\althletic-association.htm" />
-    <Content Include="App_Data\ICAS\html\alumni.htm" />
-    <Content Include="App_Data\ICAS\html\association.htm" />
-    <Content Include="App_Data\ICAS\html\calendar.htm" />
-    <Content Include="App_Data\ICAS\html\career-counselling-cell.htm" />
-    <Content Include="App_Data\ICAS\html\career_counselling.htm" />
-    <Content Include="App_Data\ICAS\html\crest.htm" />
-    <Content Include="App_Data\ICAS\html\cultural-association.htm" />
-    <Content Include="App_Data\ICAS\html\day-scholar-association.htm" />
-    <Content Include="App_Data\ICAS\html\department-botany.htm" />
-    <Content Include="App_Data\ICAS\html\department-chemistry.htm" />
-    <Content Include="App_Data\ICAS\html\department-physics.htm" />
-    <Content Include="App_Data\ICAS\html\dramatic-association.htm" />
-    <Content Include="App_Data\ICAS\html\examination.htm" />
-    <Content Include="App_Data\ICAS\html\governing-body.htm" />
-    <Content Include="App_Data\ICAS\html\grievence-cell.htm" />
-    <Content Include="App_Data\ICAS\html\history.htm" />
-    <Content Include="App_Data\ICAS\html\holidays.htm" />
-    <Content Include="App_Data\ICAS\html\iqac-cell.htm" />
-    <Content Include="App_Data\ICAS\html\location.htm" />
-    <Content Include="App_Data\ICAS\html\nss-cell.htm" />
-    <Content Include="App_Data\ICAS\html\principal-message.htm" />
-    <Content Include="App_Data\ICAS\html\principals-list.htm" />
-    <Content Include="App_Data\ICAS\html\right-to-information.htm" />
-    <Content Include="App_Data\ICAS\html\rules.htm" />
-    <Content Include="App_Data\ICAS\html\StaffAchievements.htm" />
-    <Content Include="App_Data\ICAS\html\StaffAssociation.htm" />
-    <Content Include="App_Data\ICAS\html\staffdistributioncurricularactivities.htm" />
-    <Content Include="App_Data\ICAS\html\StaffPrincipalsList.htm" />
-    <Content Include="App_Data\ICAS\html\student-achievements.htm" />
-    <Content Include="App_Data\ICAS\html\student-exam-results.htm" />
-    <Content Include="App_Data\ICAS\html\student-feedback.htm" />
-    <Content Include="App_Data\ICAS\html\students-composition.htm" />
-    <Content Include="App_Data\ICAS\html\teachers-association.htm" />
-    <Content Include="App_Data\ICAS\html\ugc-cell.htm" />
-    <Content Include="App_Data\ICAS\html\union.htm" />
-    <Content Include="App_Data\ICAS\html\vision-mission.htm" />
-    <Content Include="App_Data\ICAS\html\yrc-cell.htm" />
-    <Content Include="App_Data\Library\TSDCLibrary.mdb" />
     <Content Include="App_Error\Error404.aspx" />
     <Content Include="App_Error\Maintenance.aspx" />
     <Content Include="App_Error\WorkInProgress.aspx" />
@@ -419,26 +380,13 @@
       <LastGenOutput>ModelLibrary.cs</LastGenOutput>
     </Content>
     <Content Include="Document.aspx" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y_Thumbnail.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y_Thumbnail.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y_Thumbnail.jpg" />
     <Content Include="Downloads\HtmlPage1.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="AdminWorldBank.aspx" />
     <Content Include="iCAS\HtmlPage1.html" />
-    <Content Include="Images\About\crest.jpg" />
-    <Content Include="Images\About\Departments\Department-.jpg" />
-    <Content Include="Images\About\Departments\department-botanty.jpg" />
-    <Content Include="Images\About\Departments\department-BOTANY.gif" />
-    <Content Include="Images\About\Departments\department-info tech.jpg" />
     <Content Include="Images\About\Departments\HOD-.jpg" />
-    <Content Include="Images\About\history.jpg" />
-    <Content Include="Images\About\principal-list.jpg" />
     <Content Include="Images\Glossary\BkgFooter.jpg" />
     <Content Include="Images\Glossary\BkgList.png" />
     <Content Include="Images\Glossary\BkgTitle.gif" />
@@ -480,6 +428,7 @@
     <Content Include="Images\Glossary\zoom.ico" />
     <Content Include="Images\LIBRARY-LEFT-COL.jpg" />
     <Content Include="Images\lightbox-ico-loading.gif" />
+    <Content Include="Images\logo-50.png" />
     <Content Include="Images\Pride\student-bharati-jena.jpg" />
     <Content Include="Images\Pride\student-kasturi.jpg" />
     <Content Include="Images\Pride\student-miss-nivedita-kar.jpg" />
@@ -498,17 +447,9 @@
     <Content Include="Images\Products\product7.gif" />
     <Content Include="Images\Products\product8.gif" />
     <Content Include="Images\Products\product9.gif" />
-    <Content Include="Images\slides_tsdc\slide_0002.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_4_NCC.jpg" />
-    <Content Include="Images\slides_tsdc\slide_2017_5_YRC.jpg" />
-    <Content Include="Images\slides_tsdc\slide_2017_6.jpg" />
-    <Content Include="Images\slides_tsdc\slide_2017_7.jpg" />
-    <Content Include="Images\slides_tsdc\slide_2017_7_NSS.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_8_IT_LAB.jpg" />
-    <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X8.jpg" />
-    <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X800.jpg" />
     <Content Include="Images\User\no-user.png" />
-    <Content Include="Index.aspx" />
     <Content Include="Library\BooksManage.aspx" />
     <Content Include="Library\Transactions.aspx" />
     <Content Include="MinutesOfMeeting.aspx" />
@@ -517,8 +458,6 @@
     <Content Include="Images\slides_tsdc\slide_2017_1.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_2.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_3.jpg" />
-    <Content Include="Images\TSDC-WEB-HEAD-80.jpg" />
-    <Content Include="Images\TSDC-WEB-HEAD-NAV-BAR-50.jpg" />
     <Content Include="Images\User\default-user.png" />
     <Content Include="Images\User\Employee\staf-01.png" />
     <Content Include="Images\User\Employee\staf-02.png" />
@@ -659,7 +598,6 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Downloads\AlumniRegistrationForm.pdf" />
-    <Content Include="App_Data\Library\TSDCLibrary.ldb" />
     <EntityDeploy Include="Database\ModelLibrary.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelLibrary.Designer.cs</LastGenOutput>
@@ -676,8 +614,7 @@
     <Content Include="Documents\PUBL_6_Y2017_M12_D29-H13_M13_S2.pdf" />
     <Content Include="Documents\PUBL_9_Y2017_M12_D21-H21_M31_S38.pdf" />
     <Content Include="App_MasterPages\Site.Master" />
-    <Content Include="App_MasterPages\PKTrendz.Master" />
-    <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\staging.app.adc.jnprasad.in - FTP.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -688,14 +625,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="SendEmail.aspx" />
     <Content Include="SendShortMessage.aspx" />
-    <Content Include="SendSMS.aspx" />
     <Content Include="ShowSlides.aspx" />
     <Content Include="sitemap.xml" />
     <Content Include="SlideShow.aspx" />
-    <Content Include="slideshow.html" />
-    <Content Include="slideshow_automatic.html" />
-    <Content Include="slideshow_indicator.html" />
-    <Content Include="slideshow_manual.html" />
     <Content Include="StaffResearchPublications.aspx" />
     <Content Include="Students.aspx" />
     <Content Include="Themes\Common\CSS\LibraryBookSearch.ascx.css" />
@@ -715,7 +647,6 @@
     <Content Include="Themes\Common\CSS\Global.css" />
     <Content Include="Themes\Common\CSS\GridViews.css" />
     <Content Include="Themes\Common\CSS\GridViewsPager.css" />
-    <Content Include="App_Data\MicroERP\ChartData.xml" />
     <Content Include="App_Error\AccessDenied.aspx" />
     <Content Include="App_Error\Error.mdb" />
     <Content Include="App_Error\Error500.aspx" />
@@ -769,10 +700,6 @@
     <Content Include="Apps\HRMS\ManageDevices.aspx" />
     <Content Include="Apps\Logout.aspx" />
     <Content Include="App_Data\MicroERP\Messages.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\MicroERP\MicroNews.xml" />
-    <Content Include="App_Data\MicroERP\Miscellaneous.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Global.asax" />
@@ -1038,7 +965,6 @@
     <Content Include="Themes\Default\Images\UpdateProgress\spinningglobe.gif" />
     <Content Include="Themes\Default\Images\Validate.gif" />
     <Content Include="App_MasterPages\ICAS.Master" />
-    <Content Include="Themes\Profiles\Employee Profile-10-Photo.jpg" />
     <Content Include="Themes\Profiles\Temp\Employee Profile-1-Photo.jpg" />
     <Content Include="Upload\Approvals.aspx" />
     <Content Include="Upload\VideoGallery.aspx" />
@@ -1058,8 +984,6 @@
     <Content Include="Downloads\AlumniRegistrationForm.rar" />
     <Content Include="Downloads\SSR_TSDC.pdf" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
-    <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\tsdcollege.in.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1071,7 +995,6 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="tsd-college-governing-body.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1643,13 +1566,6 @@
     <Compile Include="App_MasterPages\MicroERP-MasterPage.Master.designer.cs">
       <DependentUpon>MicroERP-MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="App_MasterPages\PKTrendz.Master.cs">
-      <DependentUpon>PKTrendz.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_MasterPages\PKTrendz.Master.designer.cs">
-      <DependentUpon>PKTrendz.Master</DependentUpon>
-    </Compile>
     <Compile Include="App_MasterPages\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2095,13 +2011,6 @@
     <Compile Include="Document.aspx.designer.cs">
       <DependentUpon>Document.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Library\BooksManage.aspx.cs">
       <DependentUpon>BooksManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2358,13 +2267,6 @@
     </Compile>
     <Compile Include="SendShortMessage.aspx.designer.cs">
       <DependentUpon>SendShortMessage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SendSMS.aspx.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SendSMS.aspx.designer.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="ShowSlides.aspx.cs">
@@ -2898,14 +2800,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\ICAS\ESTABLMTS\" />
-    <Folder Include="App_Data\ICAS\estb\" />
-    <Folder Include="App_Data\ICAS\excel\" />
-    <Folder Include="App_Data\ICAS\json\" />
-    <Folder Include="App_Data\ICAS\xml\" />
-    <Folder Include="App_Data\MicroERP\CHARTS\" />
-    <Folder Include="App_Data\MicroERP\CRMS\CustomerProfiles\" />
-    <Folder Include="App_Data\MicroERP\CRMS\FieldForceProfiles\" />
     <Folder Include="App_Themes\Standard\" />
     <Folder Include="Images\UpdateProgress\" />
     <Folder Include="Themes\Common\HTML\TSDC\" />

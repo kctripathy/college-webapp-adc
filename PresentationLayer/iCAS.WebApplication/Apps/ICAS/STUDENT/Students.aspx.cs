@@ -516,6 +516,8 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
             //btn_Submit2.Text = MicroEnums.DataOperation.Save.GetStringValue();
         }
 
+
+        //TODO: REMOVE HARDCODED VALUE - GetClassName
         protected string GetClassName(int classid)
         {
 
@@ -742,7 +744,7 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
         }
         void BindSubjectsAndPreviousQualGrid(Student theStudent)
         {
-            CheckSubjects();
+            CheckSubjectsAndShowView();
             int StreamID = int.Parse(DropDown_StreamList.SelectedValue);
             int CourseID = int.Parse(drpdwn_CourseId.SelectedValue);
 
@@ -937,7 +939,8 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
         }
         protected void DropDown_StreamList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CheckSubjects();
+            if (DropDown_StreamList.SelectedIndex == 0) return;
+            CheckSubjectsAndShowView();
             int StreamID=int.Parse(DropDown_StreamList.SelectedValue);
             int CourseID=int.Parse(drpdwn_CourseId.SelectedValue);
             chklist_CompulsorySubjectLists.DataSource = SubjectManagement.GetInstance.GetSubjectAllByStream(StreamID, CourseID,"COMPULSORY", String.Empty, false);
@@ -948,7 +951,17 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
             {
                 list.Selected = true;
             }
-            if (drpdwn_CourseId.SelectedValue.Equals("2"))//For +2
+
+            if (drpdwn_CourseId.SelectedValue.Equals("4"))//For +3 Arts
+            {
+                lbl_HonsMaxCount.Text = "(Max-1)";
+                chklist_HonsSubjects.DataSource = SubjectManagement.GetInstance.GetSubjectAllByStream(StreamID, CourseID, "HONS", String.Empty, false);
+                chklist_HonsSubjects.DataTextField = "SubjectName";
+                chklist_HonsSubjects.DataValueField = "SubjectID";
+                chklist_HonsSubjects.DataBind();
+            }
+
+            else if (drpdwn_CourseId.SelectedValue.Equals("2"))//For +2
             {
                 lbl_MaxCount.Text = "(Max-4)";
                 chklist_ElectiveSubjectsBind.DataSource = SubjectManagement.GetInstance.GetSubjectAllByStream(StreamID, CourseID, "ELECTIVE", String.Empty, false);
@@ -996,7 +1009,7 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
                 chklistPassSubjects.DataBind();
             }                        
         }
-        void CheckSubjects()
+        void CheckSubjectsAndShowView()
         {            
             //chklist_CompulsorySubjectLists.Enabled = false;
             if (drpdwn_CourseId.SelectedValue == "2")
@@ -1004,12 +1017,12 @@ namespace Micro.WebApplication.APPS.ICAS.STUDENT
                 MultiView_Subjects.SetActiveView(View_Elective);
                 PanelHonsPass.Visible = false;
             }
-            else if (drpdwn_CourseId.SelectedValue == "3" && DropDown_StreamList.SelectedValue == "1")
+            else if (drpdwn_CourseId.SelectedValue == "3" || DropDown_StreamList.SelectedValue == "1")
             {
                 MultiView_Subjects.SetActiveView(View_MajorMinorElective);
                 PanelHonsPass.Visible = true;
             }
-            else if (drpdwn_CourseId.SelectedValue == "3" && DropDown_StreamList.SelectedValue == "2")
+            else if (drpdwn_CourseId.SelectedValue == "4" || drpdwn_CourseId.SelectedValue == "3" || DropDown_StreamList.SelectedValue == "2")
             {
                 MultiView_Subjects.SetActiveView(View_Elective);
                 PanelHonsPass.Visible = true;

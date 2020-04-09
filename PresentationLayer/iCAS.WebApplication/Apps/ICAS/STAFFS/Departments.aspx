@@ -4,11 +4,12 @@
 <%--<%@ Register Src="../../App_UserControls/UC_Search.ascx" TagName="UC_Search" TagPrefix="micro" %>--%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMicroERP" runat="server">
+    
     <h1 class="PageTitle">
         <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Department Details" />
     </h1>
     <ajax:TabContainer runat="server" ID="tab_Departments" ActiveTabIndex="1" AutoPostBack="true" OnActiveTabChanged="tab_Departments_ActiveTabChanged">
-        <ajax:TabPanel ID="tab_DepartmentAll" runat="server" HeaderText="ALL Department">
+        <ajax:TabPanel ID="tab_DepartmentAll" runat="server" HeaderText="ALL Departments" CssClass="tabHeader">
             <ContentTemplate>
                 <asp:MultiView runat="server" ID="multiView_DepartmentDetails">
                     <asp:View ID="view_InputControls" runat="server">

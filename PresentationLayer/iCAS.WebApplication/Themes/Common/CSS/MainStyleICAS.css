@@ -784,3 +784,8 @@ html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageCon
 {
 	font-weight: bold;
 }
+
+
+.ajax__tab_tab {
+    height: 25px !important;
+}

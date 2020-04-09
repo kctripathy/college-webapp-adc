@@ -29,16 +29,9 @@
                     <li style="height: 50px; overflow: auto; margin-top: 0px; width: 100%; border: solid 1px #ccc;">
                         <asp:RadioButtonList runat="server" ID="rblist_classes" RepeatDirection="Horizontal" RepeatColumns="8" RepeatLayout="Table">
                             <asp:ListItem Text="All" Value="0"></asp:ListItem>
-                            <asp:ListItem Text="+2 Sc. 1st Year" Value="2"></asp:ListItem>
-                            <asp:ListItem Text="+2 Sc. 2nd Year" Value="3"></asp:ListItem>
-                            <asp:ListItem Text="+2 Arts 1st Year" Value="9"></asp:ListItem>
-                            <asp:ListItem Text="+2 Arts 2nd Year" Value="10"></asp:ListItem>
-                            <asp:ListItem Text="+3 Arts 1st Year" Value="12"></asp:ListItem>
-                            <asp:ListItem Text="+3 Arts 2nd Year" Value="13"></asp:ListItem>
-                            <asp:ListItem Text="+3 Arts 3rd Year" Value="14"></asp:ListItem>
-                            <asp:ListItem Text="+3 Sc. 1st Year" Value="5"></asp:ListItem>
-                            <asp:ListItem Text="+3 Sc. 2nd Year" Value="6"></asp:ListItem>
-                            <asp:ListItem Text="+3 Sc. 3rd Year" Value="7"></asp:ListItem>
+                            <asp:ListItem Text="+3 Arts 1st Year" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="+3 Arts 2nd Year" Value="3"></asp:ListItem>
+                            <asp:ListItem Text="+3 Arts 3rd Year" Value="4"></asp:ListItem>                            
                         </asp:RadioButtonList>
                     </li>
                     <li class="FormButton_Top" style="margin-top: 10px; width: 100%; text-align: right;">

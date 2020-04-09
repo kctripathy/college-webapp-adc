@@ -493,7 +493,10 @@ namespace Micro.Commons
             Miss,
 
             [StringValue("Dr.")]
-            Dr
+            Dr,
+
+            [StringValue("Prof.")]
+            Prof
         }
 
         public enum Qualifications

@@ -35,7 +35,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             if (!IsPostBack)
             {
                 BasePage.CurrentLoggedOnUser.ClientPage = this.Page;
-                BasePage.ShowHidePagePermissions(gview_EmployeeProfiles, btn_New, this.Page);
+                //BasePage.ShowHidePagePermissions(gview_EmployeeProfiles, btn_New, this.Page);
                 ResetPageVariables();
                 SetValidationMessages();
 

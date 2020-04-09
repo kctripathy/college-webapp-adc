@@ -44,6 +44,12 @@ namespace Micro.Objects.ICAS.STAFFS
             set;
         }
 
+        public string TeachingOrNonTeaching
+        {
+            get;
+            set;
+        }
+
         public int AddedBy
         {
             get;

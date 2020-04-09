@@ -42,7 +42,10 @@
            
         }
     </style>
-    <div id="HomepageSlideshow">
+    <div style="text-align:center">
+        <h2>Back Office Management Appplication</h2>
+    </div>
+    <div id="HomepageSlideshow" style="display:none">
         <uc1:UC_WebUserControlSlider ID="UC_WebUserControlSlider1" runat="server" />
         <ul id="QuoteCollegeUl">
             <li class="QuoteLi">Anchalika DEGREE COLLEGE, JAGANNATH PRASAD<span class="QuoteLegend">&nbsp; -- Estb. 19990 </span>

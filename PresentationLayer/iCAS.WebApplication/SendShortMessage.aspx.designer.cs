@@ -130,49 +130,22 @@ namespace TCon.iCAS.WebApplication {
         protected global::System.Web.UI.WebControls.CheckBoxList chkList_Classes;
         
         /// <summary>
-        /// lblStudentsCount control.
+        /// DisplayRecordsUL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStudentsCount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DisplayRecordsUL;
         
         /// <summary>
-        /// btnSelectAll control.
+        /// liStaffSection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelectAll;
-        
-        /// <summary>
-        /// btnUnSelectAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUnSelectAll;
-        
-        /// <summary>
-        /// grdview_Students control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdview_Students;
-        
-        /// <summary>
-        /// lblStaffCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStaffCount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liStaffSection;
         
         /// <summary>
         /// ButtonSelectAllStaffs control.
@@ -193,6 +166,15 @@ namespace TCon.iCAS.WebApplication {
         protected global::System.Web.UI.WebControls.Button ButtonUnSelectAllStaffs;
         
         /// <summary>
+        /// lblStaffCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStaffCount;
+        
+        /// <summary>
         /// grdview_Staffs control.
         /// </summary>
         /// <remarks>
@@ -200,6 +182,51 @@ namespace TCon.iCAS.WebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdview_Staffs;
+        
+        /// <summary>
+        /// liStudentsSection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liStudentsSection;
+        
+        /// <summary>
+        /// btnSelectAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSelectAll;
+        
+        /// <summary>
+        /// btnUnSelectAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUnSelectAll;
+        
+        /// <summary>
+        /// lblStudentsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStudentsCount;
+        
+        /// <summary>
+        /// grdview_Students control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdview_Students;
         
         /// <summary>
         /// Button1 control.

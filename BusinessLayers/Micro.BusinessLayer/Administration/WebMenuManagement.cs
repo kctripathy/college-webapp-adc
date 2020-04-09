@@ -76,16 +76,16 @@ namespace Micro.BusinessLayer.Administration
         {
             try
             {
-                //return WebMenuIntegration.SelectAllMenuItemsByRoleId(roleId,companyId);
-                //TODO: cache this menu items
-				string UniqueKey = string.Concat("MenuItemsByRole_", roleId.ToString());
-				if (HttpRuntime.Cache[UniqueKey] == null)
-				{
+                return WebMenuIntegration.SelectAllMenuItemsByRoleId(roleId,companyId);
+    //            //TODO: cache this menu items
+				//string UniqueKey = string.Concat("MenuItemsByRole_", roleId.ToString());
+				//if (HttpRuntime.Cache[UniqueKey] == null)
+				//{
 
-					List<WebMenu> WebMenuList = WebMenuIntegration.SelectAllMenuItemsByRoleId(roleId);
-					HttpRuntime.Cache[UniqueKey] = WebMenuList;
-				}
-				return (List<WebMenu>)(HttpRuntime.Cache[UniqueKey]);
+				//	List<WebMenu> WebMenuList = WebMenuIntegration.SelectAllMenuItemsByRoleId(roleId);
+				//	HttpRuntime.Cache[UniqueKey] = WebMenuList;
+				//}
+				//return (List<WebMenu>)(HttpRuntime.Cache[UniqueKey]);
             }
             catch (Exception ex)
             {

@@ -36,7 +36,7 @@
                                 <asp:Label runat="server" ID="Label4" Text="Please Choose Staff Category:" />
                             </li>
                             <li class="FormValue">
-                                <asp:RadioButtonList runat="server" ID="optCategory" RepeatDirection="Horizontal" CellSpacing="2" CellPadding="2">
+                                <asp:RadioButtonList runat="server" ID="optCategory" RepeatDirection="Vertical" CellSpacing="4" CellPadding="2">
                                     <asp:ListItem Text="Teaching" Value="T" Selected="True" />
                                     <asp:ListItem Text="Non-Teaching" Value="N" />
                                 </asp:RadioButtonList>

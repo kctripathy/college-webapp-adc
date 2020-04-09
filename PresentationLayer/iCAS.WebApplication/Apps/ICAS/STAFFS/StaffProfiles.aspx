@@ -111,7 +111,7 @@
 											<asp:Label runat="server" ID="lbl_EmployeeProfileID" Text='<%# Eval("EmployeeProfilleID") %>' Visible="false" />
 										</ItemTemplate>
 									</asp:TemplateField>
-									<asp:ImageField DataImageUrlField="ImageUrl" ControlStyle-Height="150" ControlStyle-Width="150" ItemStyle-CssClass="ImageUrl" />
+									<asp:ImageField DataImageUrlField="ImageUrl"  ItemStyle-CssClass="ImageUrl" />
 									<asp:BoundField DataField="EmployeeName" HeaderText=" Name " ItemStyle-CssClass="EmployeeName" />
 									<asp:BoundField DataField="EmployeeCode" HeaderText=" Code " ItemStyle-CssClass="EmployeeCode" />
 									<asp:BoundField DataField="CommonKeyValue" HeaderText=" Profile " ItemStyle-CssClass="CommonKeyValue" />

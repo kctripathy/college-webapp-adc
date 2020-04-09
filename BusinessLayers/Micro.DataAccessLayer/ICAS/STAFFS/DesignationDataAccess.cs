@@ -54,6 +54,7 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
                 SqlCmd.Parameters.Add(GetParameter("@DesignationDescription", SqlDbType.VarChar, Desg.DesignationDescription));
                 SqlCmd.Parameters.Add(GetParameter("@RoleId", SqlDbType.Int, Desg.RoleID));
                 SqlCmd.Parameters.Add(GetParameter("@ReportingToDesignationID", SqlDbType.Int, Desg.ReportingToDesignationID));
+                SqlCmd.Parameters.Add(GetParameter("@TeacingOrNonTeaching", SqlDbType.VarChar, Desg.TeachingOrNonTeaching));
                 SqlCmd.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
                 SqlCmd.CommandText = "pHRM_Designation_Insert";
 
