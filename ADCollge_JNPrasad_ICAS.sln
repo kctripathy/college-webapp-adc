@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.CacheLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.WebAPI", "PresentationLayer\iCAS.WebAPI\iCAS.WebAPI.csproj", "{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCAS.ReadExcelWriteDatabase", "iCAS.ReadExcelWriteDatabase", "{E7AD1EB5-88C6-460B-89F2-6CC4CCB477FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadExcelFileApp", "ReadExcelFileApp\ReadExcelFileApp.csproj", "{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,18 @@ Global
 		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|x86.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|x86.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +178,7 @@ Global
 		{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11} = {C49DB8B4-7DD3-4277-A54F-7465D5DFA3CF}
 		{447FA23D-A263-4C44-915D-D518832F0B58} = {9DAFC411-D1D1-47F5-8285-10899EA676EF}
 		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E} = {05FEFB5B-E41E-4E30-96D9-59A2E5059355}
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0} = {E7AD1EB5-88C6-460B-89F2-6CC4CCB477FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14D38350-C25C-48C1-A300-9876DA35E24B}

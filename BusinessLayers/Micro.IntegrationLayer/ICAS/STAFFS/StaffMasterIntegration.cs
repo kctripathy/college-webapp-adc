@@ -210,7 +210,9 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     ObjEmployee.OfficeName = dr["OfficeName"].ToString();
 
                     ObjEmployee.Mobile = dr["Mobile"].ToString();
-                   // ObjEmployee.PersonalEMailID = dr["PersonalEMailID"].ToString();
+                    ObjEmployee.PhoneNumber = dr["PhoneNumber"].ToString();
+
+                    // ObjEmployee.PersonalEMailID = dr["PersonalEMailID"].ToString();
                     ObjEmployee.EmailID = dr["EmailID"].ToString();
                    // ObjEmployee.ServiceStatus = dr["ServiceStatus"].ToString();
                    // ObjEmployee.ServiceType = dr["ServiceType"].ToString();
@@ -266,6 +268,18 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     //    ObjEmployee.LastQualification = dr["LastQualification"].ToString();
                     //}
                     //LastQualification
+
+                    if (dr["Address_Present_DistrictID"].ToString() != "")
+                    {
+                        ObjEmployee.Address_Present_TownOrCity = dr["Address_Present_TownOrCity"].ToString();
+                        ObjEmployee.Address_Present_LandMark = dr["Address_Present_LandMark"].ToString();
+                        ObjEmployee.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
+                        ObjEmployee.Address_Present_Pincode = dr["Address_Present_Pincode"].ToString();
+                        //ObjEmployee.Address_Present_DistrictName = dr["Address_Present_DistrictName"].ToString();
+                        //ObjEmployee.Address_Present_StateName = dr["Address_Present_StateName"].ToString();
+                        //ObjEmployee.Address_Present_CountryName = dr["Address_Present_CountryName"].ToString();
+                    }
+
                     try
                     {
                         if (dr["TeachingOrNonTeaching"] == null)

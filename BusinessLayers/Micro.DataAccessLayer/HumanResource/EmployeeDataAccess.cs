@@ -269,6 +269,39 @@ namespace Micro.DataAccessLayer.HumanResource
 			}
 		}
 
+        public int UpdateEmployeeInfo(EmployeeInfo theEmployee)
+        {
+            try
+            {
+                int ReturnValue = 0;
+
+                SqlCommand UpdateCommand = new SqlCommand();
+
+                UpdateCommand.CommandType = CommandType.StoredProcedure;
+
+                UpdateCommand.Parameters.Add(GetParameter("ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+
+                UpdateCommand.Parameters.Add(GetParameter("EmployeeID", SqlDbType.Int, theEmployee.EmployeeID));
+                UpdateCommand.Parameters.Add(GetParameter("PhoneNumber", SqlDbType.VarChar, theEmployee.PhoneNumber));
+                UpdateCommand.Parameters.Add(GetParameter("Mobile", SqlDbType.VarChar, theEmployee.Mobile));
+                UpdateCommand.Parameters.Add(GetParameter("EmailID", SqlDbType.VarChar, theEmployee.EMailID));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_TownOrCity", SqlDbType.VarChar, theEmployee.Address_Present_TownOrCity));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_DistrictID", SqlDbType.Int, theEmployee.Address_Present_DistrictID));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_PinCode", SqlDbType.VarChar, theEmployee.Address_Present_PinCode));
+                
+                UpdateCommand.CommandText = "pHRM_Employees_Update_EmployeeInfo";
+                ExecuteStoredProcedure(UpdateCommand);
+
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+
+                return ReturnValue;
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
         public int DeleteEmployee(Employee theEmployee)
 		{
 

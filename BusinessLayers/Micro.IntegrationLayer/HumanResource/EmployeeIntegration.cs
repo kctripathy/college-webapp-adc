@@ -31,7 +31,13 @@ namespace Micro.IntegrationLayer.HumanResource
 			return EmployeeDataAccess.GetInstance.UpdateEmployeeContactInfo(theEmployee);
 		}
 
-		public static int DeleteEmployee(Employee theEmployee)
+        public static int UpdateEmployeeInfo(EmployeeInfo theEmployee)
+        {
+            return EmployeeDataAccess.GetInstance.UpdateEmployeeInfo(theEmployee);
+        }
+        
+
+        public static int DeleteEmployee(Employee theEmployee)
 		{
 			return EmployeeDataAccess.GetInstance.DeleteEmployee(theEmployee);
 		}

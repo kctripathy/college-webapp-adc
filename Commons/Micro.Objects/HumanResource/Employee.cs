@@ -3,6 +3,8 @@ using System.Drawing;
 
 namespace Micro.Objects.HumanResource
 {
+   
+
 	[Serializable]
     public class Employee : IEquatable<Employee>
 	{

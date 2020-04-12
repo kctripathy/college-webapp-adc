@@ -137,7 +137,28 @@ namespace Micro.DataAccessLayer.HumanResource
 			
 		}
 
-		public int DeleteEmployeeProfile(EmployeeProfile theEmployeeProfile)
+        public int UpdateEmployeeProfilePhoto(EmployeeProfile theEmployeeProfile)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand UpdateCommand = new SqlCommand())
+            {
+
+                UpdateCommand.CommandType = CommandType.StoredProcedure;
+              
+                UpdateCommand.Parameters.Add(GetParameter("@EmployeeID", SqlDbType.Int, theEmployeeProfile.EmployeeID));
+                UpdateCommand.Parameters.Add(GetParameter("@EmployeePhoto", SqlDbType.VarBinary, theEmployeeProfile.SettingKeyValue));                
+                
+                UpdateCommand.CommandText = "pHRM_EmployeeProfiles_Update_Photo";
+                ExecuteStoredProcedure(UpdateCommand);
+
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+            }
+            return ReturnValue;
+
+
+        }
+
+        public int DeleteEmployeeProfile(EmployeeProfile theEmployeeProfile)
 		{
 			int ReturnValue = 0;
 

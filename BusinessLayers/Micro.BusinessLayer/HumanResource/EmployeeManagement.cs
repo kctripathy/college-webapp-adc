@@ -55,6 +55,11 @@ namespace Micro.BusinessLayer.HumanResource
 			return EmployeeIntegration.UpdateEmployeeContactInfo(theEmployee);
         }
 
+        public int UpdateEmployeeInfo(EmployeeInfo theEmployee)
+        {
+            return EmployeeIntegration.UpdateEmployeeInfo(theEmployee);
+        }
+
         public int DeleteEmployee(Employee theEmployee)
         {
             return EmployeeIntegration.DeleteEmployee(theEmployee);

@@ -42,9 +42,10 @@
             // btnChoose
             // 
             this.btnChoose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChoose.Location = new System.Drawing.Point(291, 22);
+            this.btnChoose.Location = new System.Drawing.Point(388, 27);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(184, 28);
+            this.btnChoose.Size = new System.Drawing.Size(245, 34);
             this.btnChoose.TabIndex = 0;
             this.btnChoose.Text = "Choose and Read File";
             this.btnChoose.UseVisualStyleBackColor = true;
@@ -57,18 +58,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 81);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1091, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(1455, 351);
             this.dataGridView1.TabIndex = 2;
             // 
             // btn_Write2Web
             // 
             this.btn_Write2Web.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Write2Web.Location = new System.Drawing.Point(920, 22);
+            this.btn_Write2Web.Location = new System.Drawing.Point(1227, 27);
+            this.btn_Write2Web.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Write2Web.Name = "btn_Write2Web";
-            this.btn_Write2Web.Size = new System.Drawing.Size(183, 28);
+            this.btn_Write2Web.Size = new System.Drawing.Size(244, 34);
             this.btn_Write2Web.TabIndex = 0;
             this.btn_Write2Web.Text = "Write To Web";
             this.btn_Write2Web.UseVisualStyleBackColor = true;
@@ -77,9 +80,10 @@
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 455);
+            this.progressBar1.Location = new System.Drawing.Point(0, 560);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1115, 23);
+            this.progressBar1.Size = new System.Drawing.Size(1487, 28);
             this.progressBar1.TabIndex = 3;
             // 
             // label1
@@ -88,9 +92,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(0, 438);
+            this.label1.Location = new System.Drawing.Point(0, 540);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
@@ -112,26 +117,28 @@
             "+3_1st_year",
             "+3_2nd_year",
             "+3_Final_year"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 22);
+            this.comboBox1.Location = new System.Drawing.Point(20, 27);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 28);
+            this.comboBox1.Size = new System.Drawing.Size(343, 33);
             this.comboBox1.TabIndex = 5;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(12, 357);
+            this.textBox2.Location = new System.Drawing.Point(16, 439);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1091, 26);
+            this.textBox2.Size = new System.Drawing.Size(1453, 31);
             this.textBox2.TabIndex = 7;
             // 
-            // Form1
+            // FormInsertStudentsMasterData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 478);
+            this.ClientSize = new System.Drawing.Size(1487, 588);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -140,7 +147,8 @@
             this.Controls.Add(this.btn_Write2Web);
             this.Controls.Add(this.btnChoose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "FormInsertStudentsMasterData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BULK IMPORT OF STUDENTS DATA::";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

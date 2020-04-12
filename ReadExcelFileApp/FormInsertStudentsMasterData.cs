@@ -164,7 +164,7 @@ namespace ReadExcelFileApp
             try
             {
 
-                objStudent.SessionID = 38;//2017-18 | 35=2015-16
+                objStudent.SessionID = 1;//2020-21
                 objStudent.TCNo = "NA";
                 objStudent.ReceiptNo = "NA";  
                 

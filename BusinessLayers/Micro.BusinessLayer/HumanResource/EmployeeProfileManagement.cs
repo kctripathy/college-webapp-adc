@@ -84,7 +84,12 @@ namespace Micro.BusinessLayer.HumanResource
 			return EmployeeProfileIntegration.UpdateEmployeeProfile(theEmployeeProfile);
 		}
 
-		public int DeleteEmployeeProfile(EmployeeProfile theEmployeeProfile)
+        public int UpdateEmployeeProfilePhoto(EmployeeProfile theEmployeeProfile)
+        {
+            return EmployeeProfileIntegration.UpdateEmployeeProfilePhoto(theEmployeeProfile);
+        }
+
+        public int DeleteEmployeeProfile(EmployeeProfile theEmployeeProfile)
 		{
 			return EmployeeProfileIntegration.DeleteEmployeeProfile(theEmployeeProfile);
 		}
