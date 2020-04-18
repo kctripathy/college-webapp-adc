@@ -1,4 +1,5 @@
 ﻿using Micro.BusinessLayer.ICAS.STUDENT;
+using Micro.Objects.ICAS;
 using Micro.Objects.ICAS.STUDENT;
 using Newtonsoft.Json.Linq;
 using System;
@@ -16,39 +17,27 @@ namespace iCAS.WebAPI.Controllers
 
         public HttpResponseMessage Get()
         {
-            List<Student> studentsList = StudentManagement.GetInstance.GetStudentList();
+            List<Student> studentsList = StudentManagement.GetInstance.GetStudentList(true,false,false);
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JArray.FromObject(studentsList).ToString(), Encoding.UTF8, "application/json")
             };
         }
 
-
-        //// GET: api/Students
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        // GET: api/Students/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("api/student/update")]
+        public HttpResponseMessage UpdateStudentInfo([FromBody] StudentInfo student)
         {
-            return "value";
-        }
+            //UpdateEmployeeInfo
+            int successFlag = StudentManagement.GetInstance.UpdateStudentInfo(student);
 
-        // POST: api/Students
-        public void Post([FromBody]string value)
-        {
-        }
+            ReturnResponse objReturnResponse = new ReturnResponse
+            {
+                result = (successFlag > 0 ? "Successfully updated the profile" : "Failed to update"),
+                status = new ReturnStatus(successFlag.ToString(), (successFlag > 0 ? "Success" : "Failure"))
+            };
 
-        // PUT: api/Students/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Students/5
-        public void Delete(int id)
-        {
+            return Request.CreateResponse(HttpStatusCode.OK, objReturnResponse);
         }
     }
 }

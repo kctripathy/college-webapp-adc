@@ -174,5 +174,10 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
         }
         #endregion
 
+        public static int InsertUsersFeedBack(UserFeedback userFeedback)
+        {
+            return FeedbackMasterDataAccess.GetInstance.InsertUsersFeedBack(userFeedback);
+        }
+        
     }
 }

@@ -115,17 +115,29 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
             //}
             //return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
         }
+
         public int InsertEstablishment(Establishment theestablishment)
         {
             return EstablishmentIntegration.InsertEstablishment(theestablishment);
         }
 
+        public int InsertEstablishment(Establishment theestablishment, int userId)
+        {
+            return EstablishmentIntegration.InsertEstablishment(theestablishment, userId);
+        }
 
         public int UpdateEstablishment(Establishment theestablishment)
         {
             return EstablishmentIntegration.UpdateEstablishment(theestablishment);
         }
-
+        public int UpdateEstablishment(int estbid, string filename)
+        {
+            return EstablishmentIntegration.UpdateEstablishment(estbid, filename);
+        }
+        public int UpdateEstablishments(Establishments establishments)
+        {
+            return EstablishmentIntegration.UpdateEstablishments(establishments);
+        }
         public int DeleteEstablishment(Establishment theestablishment)
         {
             return EstablishmentIntegration.DeleteEstablishment(theestablishment);

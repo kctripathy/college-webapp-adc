@@ -7,6 +7,7 @@ using Micro.Objects.ICAS.STUDENT;
 using System.Data;
 using System.Web;
 using Micro.Objects.ICAS.LIBRARY;
+using Micro.Objects.ICAS;
 
 namespace Micro.BusinessLayer.ICAS.STUDENT
 {
@@ -111,6 +112,12 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
         {
             return StudentIntegration.UpdateStudent(theStudent, StudentSubjects);
         }
+
+        public int UpdateStudentInfo(StudentInfo theStudent)
+        {
+            return StudentIntegration.UpdateStudentInfo(theStudent);
+        }
+
         public int UpdateStudent(Student theStudent)
         {
             return StudentIntegration.UpdateStudent(theStudent);

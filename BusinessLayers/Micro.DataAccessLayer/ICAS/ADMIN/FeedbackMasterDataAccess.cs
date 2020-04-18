@@ -280,5 +280,28 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
         }
         #endregion
 
+        #region Feedback from React Application
+
+        public int InsertUsersFeedBack(UserFeedback userFeedback)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand InsertCommand = new SqlCommand())
+            {
+                InsertCommand.CommandType = CommandType.StoredProcedure;
+                InsertCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                InsertCommand.Parameters.Add(GetParameter("@UserID", SqlDbType.Int, userFeedback.UserID));
+                InsertCommand.Parameters.Add(GetParameter("@FeedbackType", SqlDbType.VarChar, userFeedback.UserFeedbackType));
+                InsertCommand.Parameters.Add(GetParameter("@FeedbackSubject", SqlDbType.VarChar, userFeedback.UserFeedbackSubject));
+                InsertCommand.Parameters.Add(GetParameter("@FeedbackMessage", SqlDbType.VarChar, userFeedback.UserFeedbackMessage));
+                
+                InsertCommand.CommandText = "pICAS_Users_Feedback_Insert";
+                ExecuteStoredProcedure(InsertCommand);
+                ReturnValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+
+            }
+            return ReturnValue;
+        }
+        #endregion
+
     }
 }

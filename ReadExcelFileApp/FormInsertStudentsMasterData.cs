@@ -166,8 +166,8 @@ namespace ReadExcelFileApp
 
                 objStudent.SessionID = 1;//2020-21
                 objStudent.TCNo = "NA";
-                objStudent.ReceiptNo = "NA";  
-                
+                objStudent.ReceiptNo = "NA";
+
                 objStudent.ClassID = int.Parse(dRowStudent[0].ToString());
                 objStudent.RollNo = dRowStudent[1].ToString();
                 objStudent.MRINO = dRowStudent[2].ToString();
@@ -177,7 +177,7 @@ namespace ReadExcelFileApp
                 objStudent.DateOfBirth = dRowStudent[6].ToString(); //
                 objStudent.BloodGroup = dRowStudent[7].ToString();
                 objStudent.Address_Present_TownOrCity = dRowStudent[8].ToString();
-                objStudent.Address_Present_DistrictID = 366;                
+                objStudent.Address_Present_DistrictID = 366;
                 if (objStudent.Address_Present_TownOrCity.Length > 6)
                 {
                     try
@@ -191,18 +191,19 @@ namespace ReadExcelFileApp
                     }
                     objStudent.Address_Present_PinCode = pinCode.ToString();
                 }
-                
-                objStudent.Caste = dRowStudent[9].ToString();
-                objStudent.PhoneNumber = dRowStudent[11].ToString();
-                objStudent.Mobile = objStudent.PhoneNumber;
-                objStudent.DateOfAdmission = dRowStudent[12].ToString();
 
+                objStudent.Caste = dRowStudent[9].ToString();
+                objStudent.PhoneNumber = dRowStudent[10].ToString();
+                objStudent.Mobile = objStudent.PhoneNumber;
+                objStudent.DateOfAdmission = dRowStudent[11].ToString();
+                objStudent.SubjectName = dRowStudent[12].ToString();
 
                 return objStudent;
             }
             catch (Exception ex)
             {
-                return objStudent;
+                throw new Exception(ex.Message);
+                //return objStudent;
             }
 
         }
@@ -230,114 +231,98 @@ namespace ReadExcelFileApp
     {
         public static int InsertStudent(Student theStudent, List<StudentSubjectTaken> StudentSubjects, List<StudentPreviousQual> StudentPreQualList)
         {
-            int ReturnValueStudent = 0;
-            int ReturnValueSubjects = 0;
-            int ReturnValuePreQuals = 0;
-            using (SqlCommand InsertCommand = new SqlCommand())
+            try
             {
-                theStudent.MRINO = ".";
 
-                InsertCommand.CommandType = CommandType.StoredProcedure;
-                InsertCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValueStudent)).Direction = ParameterDirection.Output;
-                //InsertCommand.Parameters.Add(GetParameter("@StudentCode", SqlDbType.VarChar, theStudent.StudentCode));
-                InsertCommand.Parameters.Add(GetParameter("@MRINO", SqlDbType.VarChar, theStudent.MRINO));
-                InsertCommand.Parameters.Add(GetParameter("@ReceiptNo", SqlDbType.VarChar, theStudent.ReceiptNo));
-                InsertCommand.Parameters.Add(GetParameter("@TCNo", SqlDbType.VarChar, theStudent.TCNo));
-                InsertCommand.Parameters.Add(GetParameter("@ClassID", SqlDbType.Int, theStudent.ClassID));
-                InsertCommand.Parameters.Add(GetParameter("@QualID", SqlDbType.Int, theStudent.QualID));
-                InsertCommand.Parameters.Add(GetParameter("@StreamID", SqlDbType.Int, theStudent.StreamID));
-                InsertCommand.Parameters.Add(GetParameter("@RollNo", SqlDbType.VarChar, theStudent.RollNo));
-                InsertCommand.Parameters.Add(GetParameter("@Salutation", SqlDbType.VarChar, theStudent.Salutation));
-                InsertCommand.Parameters.Add(GetParameter("@StudentName", SqlDbType.VarChar, theStudent.StudentName.ToUpper()));
-                InsertCommand.Parameters.Add(GetParameter("@FatherName", SqlDbType.VarChar, theStudent.FatherName.ToUpper()));
-                InsertCommand.Parameters.Add(GetParameter("@MotherName", SqlDbType.VarChar, theStudent.MotherName));
-                InsertCommand.Parameters.Add(GetParameter("@Gender", SqlDbType.VarChar, theStudent.Gender));
-                InsertCommand.Parameters.Add(GetParameter("@Caste", SqlDbType.VarChar, theStudent.Caste));
-                InsertCommand.Parameters.Add(GetParameter("@PHStatus", SqlDbType.VarChar, theStudent.PHStatus));
-                InsertCommand.Parameters.Add(GetParameter("@Status", SqlDbType.VarChar, theStudent.Status));
-                //InsertCommand.Parameters.Add(GetParameter("@TotalFeesPaid", SqlDbType.VarChar, theStudent.TotalFeesPaid));
-                InsertCommand.Parameters.Add(GetParameter("@DateOfBirth", SqlDbType.DateTime, DateTime.Parse(theStudent.@DateOfBirth).ToString(MicroConstants.DateFormat)));
-                //InsertCommand.Parameters.Add(GetParameter("@DateOfAdmission", SqlDbType.DateTime, theStudent.DateOfAdmission == string.Empty ? Convert.DBNull : DateTime.Parse(theStudent.DateOfAdmission).ToString(MicroConstants.DateFormat)));
-                //InsertCommand.Parameters.Add(GetParameter("@DateOfLeaving", SqlDbType.DateTime, Convert.DBNull));
-                InsertCommand.Parameters.Add(GetParameter("@Age", SqlDbType.Int, theStudent.Age));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Present_TownOrCity", SqlDbType.VarChar, theStudent.Address_Present_TownOrCity));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Present_Landmark", SqlDbType.VarChar, theStudent.Address_Present_Landmark));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Present_PinCode", SqlDbType.VarChar, theStudent.Address_Present_PinCode));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Present_DistrictID", SqlDbType.Int, theStudent.Address_Present_DistrictID));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Permanent_TownOrCity", SqlDbType.VarChar, theStudent.Address_Permanent_TownOrCity));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Permanent_Landmark", SqlDbType.VarChar, theStudent.Address_Permanent_Landmark));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Permanent_PinCode", SqlDbType.VarChar, theStudent.Address_Permanent_PinCode));
-                InsertCommand.Parameters.Add(GetParameter("@Address_Permanent_DistrictID", SqlDbType.Int, theStudent.Address_Permanent_DistrictID));
-                InsertCommand.Parameters.Add(GetParameter("@PhoneNumber", SqlDbType.VarChar, theStudent.PhoneNumber));
-                InsertCommand.Parameters.Add(GetParameter("@Mobile", SqlDbType.VarChar, theStudent.Mobile));
-                InsertCommand.Parameters.Add(GetParameter("@SessionID", SqlDbType.Int, theStudent.SessionID));
-                InsertCommand.Parameters.Add(GetParameter("@EmailID", SqlDbType.VarChar, theStudent.EMailID));
-                InsertCommand.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));
-                InsertCommand.Parameters.Add(GetParameter("@CompanyID", SqlDbType.Int, 8));
-                InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, 1));
 
-                InsertCommand.Parameters.Add(GetParameter("@SLCNo", SqlDbType.VarChar, theStudent.SLCNo));
-                //InsertCommand.Parameters.Add(GetParameter("@SLCDate", SqlDbType.DateTime, theStudent.SLCDate == string.Empty ? Convert.DBNull : DateTime.Parse(theStudent.SLCDate).ToString(MicroConstants.DateFormat)));
-
-                InsertCommand.CommandText = "[pICAS_Students_Insert_excel_short]";
-                ExecuteStoredProcedure(InsertCommand);
-                if (InsertCommand.Parameters[0].Value.ToString() == "")
+                int ReturnValueStudent = 0;
+                int ReturnValueSubjects = 0;
+                int ReturnValuePreQuals = 0;
+                using (SqlCommand InsertCommand = new SqlCommand())
                 {
-                    ReturnValueStudent = -1;
-                }
-                else
-                {
-                    ReturnValueStudent = int.Parse(InsertCommand.Parameters[0].Value.ToString());
-                }
+                    theStudent.MRINO = ".";
 
-            }
+                    InsertCommand.CommandType = CommandType.StoredProcedure;
+                    InsertCommand.Parameters.Add(GetParameter("@ReturnValueOut", SqlDbType.Int, ReturnValueStudent)).Direction = ParameterDirection.Output;
+                    InsertCommand.Parameters.Add(GetParameter("@ClassID", SqlDbType.Int, theStudent.ClassID));
+                    InsertCommand.Parameters.Add(GetParameter("@RollNo", SqlDbType.VarChar, theStudent.RollNo));
+                    InsertCommand.Parameters.Add(GetParameter("@StudentName", SqlDbType.VarChar, theStudent.StudentName.ToUpper()));
+                    InsertCommand.Parameters.Add(GetParameter("@FatherName", SqlDbType.VarChar, theStudent.FatherName.ToUpper()));
+                    InsertCommand.Parameters.Add(GetParameter("@Gender", SqlDbType.VarChar, theStudent.Gender));
+                    InsertCommand.Parameters.Add(GetParameter("@Caste", SqlDbType.VarChar, theStudent.Caste));
+                    InsertCommand.Parameters.Add(GetParameter("@DateOfBirth", SqlDbType.DateTime, DateTime.Parse(theStudent.@DateOfBirth).ToString(MicroConstants.DateFormat)));
+                    InsertCommand.Parameters.Add(GetParameter("@DateOfAdmission", SqlDbType.DateTime, theStudent.DateOfAdmission == string.Empty ? Convert.DBNull : DateTime.Parse(theStudent.DateOfAdmission).ToString(MicroConstants.DateFormat)));
+                    InsertCommand.Parameters.Add(GetParameter("@Address", SqlDbType.VarChar, theStudent.Address_Present_TownOrCity));
+                    InsertCommand.Parameters.Add(GetParameter("@PhoneNumber", SqlDbType.VarChar, theStudent.PhoneNumber));
+                    InsertCommand.Parameters.Add(GetParameter("@Mobile", SqlDbType.VarChar, theStudent.Mobile));
+                    InsertCommand.Parameters.Add(GetParameter("@EmailID", SqlDbType.VarChar, theStudent.EMailID));
+                    InsertCommand.Parameters.Add(GetParameter("@BloodGroup", SqlDbType.VarChar, theStudent.BloodGroup));
+                    InsertCommand.Parameters.Add(GetParameter("@SubjectName", SqlDbType.VarChar, theStudent.SubjectName));
 
-            if (StudentSubjects.Count > 0)
-            {
-                foreach (StudentSubjectTaken StSubjects in StudentSubjects)
-                {
-                    using (SqlCommand InsertCommandSubjects = new SqlCommand())
+                    InsertCommand.CommandText = "[pICAS_Students_Insert_2020_JNP]";
+                    ExecuteStoredProcedure(InsertCommand);
+                    if (InsertCommand.Parameters[0].Value.ToString() == "")
                     {
-                        InsertCommandSubjects.CommandType = CommandType.StoredProcedure;
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValueSubjects)).Direction = ParameterDirection.Output;
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@StudentID", SqlDbType.Int, ReturnValueStudent));
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@SubjectID", SqlDbType.Int, StSubjects.SubjectID));
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@SubjectType", SqlDbType.VarChar, StSubjects.SubjectType));
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@SessionID", SqlDbType.Int, theStudent.SessionID));//TO DO KP Remove HardCode
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));//TO DO KP Remove HardCode
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@CompanyID", SqlDbType.Int, 8));//TO DO KP Remove HardCode
-                        InsertCommandSubjects.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, 1));//TO DO KP Remove HardCode
-                        InsertCommandSubjects.CommandText = "pICAS_Student_Subjects_Insert";
-                        ExecuteStoredProcedure(InsertCommandSubjects);
-                        ReturnValueSubjects = int.Parse(InsertCommandSubjects.Parameters[0].Value.ToString());
+                        ReturnValueStudent = -1;
                     }
-                }
-            }
-            if (StudentPreQualList.Count > 0)
-            {
-                foreach (StudentPreviousQual thePreQualifications in StudentPreQualList)
-                {
-                    using (SqlCommand InsertCommandPreQuals = new SqlCommand())
+                    else
                     {
-                        InsertCommandPreQuals.CommandType = CommandType.StoredProcedure;
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValuePreQuals)).Direction = ParameterDirection.Output;
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@StudentID", SqlDbType.Int, ReturnValueStudent));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@QualID", SqlDbType.Int, thePreQualifications.QualID));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@PassingYear", SqlDbType.VarChar, thePreQualifications.PassingYear));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@Board", SqlDbType.VarChar, thePreQualifications.Board));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@Division", SqlDbType.VarChar, thePreQualifications.Division));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@Percentage", SqlDbType.VarChar, thePreQualifications.Percentage));
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, 1));//TO DO
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));//TO DO
-                        InsertCommandPreQuals.Parameters.Add(GetParameter("@CompanyID", SqlDbType.Int, 8));//TO DO
-
-                        InsertCommandPreQuals.CommandText = "piCAS_Student_PreQuals_Insert";
-                        ExecuteStoredProcedure(InsertCommandPreQuals);
-                        ReturnValuePreQuals = int.Parse(InsertCommandPreQuals.Parameters[0].Value.ToString());
+                        ReturnValueStudent = int.Parse(InsertCommand.Parameters[0].Value.ToString());
                     }
+
                 }
+                return ReturnValueStudent;
             }
-            return ReturnValueStudent;
+            catch (Exception ex)
+            {
+                return 0;
+                throw ex;
+            }
+            //if (StudentSubjects.Count > 0)
+            //{
+            //    foreach (StudentSubjectTaken StSubjects in StudentSubjects)
+            //    {
+            //        using (SqlCommand InsertCommandSubjects = new SqlCommand())
+            //        {
+            //            InsertCommandSubjects.CommandType = CommandType.StoredProcedure;
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValueSubjects)).Direction = ParameterDirection.Output;
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@StudentID", SqlDbType.Int, ReturnValueStudent));
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@SubjectID", SqlDbType.Int, StSubjects.SubjectID));
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@SubjectType", SqlDbType.VarChar, StSubjects.SubjectType));
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@SessionID", SqlDbType.Int, theStudent.SessionID));//TO DO KP Remove HardCode
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));//TO DO KP Remove HardCode
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@CompanyID", SqlDbType.Int, 8));//TO DO KP Remove HardCode
+            //            InsertCommandSubjects.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, 1));//TO DO KP Remove HardCode
+            //            InsertCommandSubjects.CommandText = "pICAS_Student_Subjects_Insert";
+            //            ExecuteStoredProcedure(InsertCommandSubjects);
+            //            ReturnValueSubjects = int.Parse(InsertCommandSubjects.Parameters[0].Value.ToString());
+            //        }
+            //    }
+            //}
+            //if (StudentPreQualList.Count > 0)
+            //{
+            //    foreach (StudentPreviousQual thePreQualifications in StudentPreQualList)
+            //    {
+            //        using (SqlCommand InsertCommandPreQuals = new SqlCommand())
+            //        {
+            //            InsertCommandPreQuals.CommandType = CommandType.StoredProcedure;
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValuePreQuals)).Direction = ParameterDirection.Output;
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@StudentID", SqlDbType.Int, ReturnValueStudent));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@QualID", SqlDbType.Int, thePreQualifications.QualID));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@PassingYear", SqlDbType.VarChar, thePreQualifications.PassingYear));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@Board", SqlDbType.VarChar, thePreQualifications.Board));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@Division", SqlDbType.VarChar, thePreQualifications.Division));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@Percentage", SqlDbType.VarChar, thePreQualifications.Percentage));
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, 1));//TO DO
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));//TO DO
+            //            InsertCommandPreQuals.Parameters.Add(GetParameter("@CompanyID", SqlDbType.Int, 8));//TO DO
+
+            //            InsertCommandPreQuals.CommandText = "piCAS_Student_PreQuals_Insert";
+            //            ExecuteStoredProcedure(InsertCommandPreQuals);
+            //            ReturnValuePreQuals = int.Parse(InsertCommandPreQuals.Parameters[0].Value.ToString());
+            //        }
+            //    }
+            //}          
         }
 
 
@@ -543,7 +528,7 @@ namespace ReadExcelFileApp
             set;
         }
 
-        
+
         public string TotalFeesPaid
         {
             get;
@@ -816,6 +801,11 @@ namespace ReadExcelFileApp
         {
             get;
             set;
+        }
+
+        public string SubjectName
+        {
+            get; set;
         }
 
         public static PropertyInfo[] GetProperties(object obj)

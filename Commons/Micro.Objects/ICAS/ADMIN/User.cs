@@ -286,8 +286,19 @@ namespace Micro.Objects.ICAS.ADMIN
 
     public class UserLogin
     {
+        public int UserID { get; set; }
         public string UserName { get; set; }
         public string UserPassword { get; set; }
+        public string UserOldPassword { get; set; }
     };
 
+    public class UserFeedback
+    {
+        public int UserID { get; set; }
+        public string UserType { get; set; }
+        public string UserFeedbackDate { get; set; }
+        public string UserFeedbackType { get; set; }
+        public string UserFeedbackSubject { get; set; }
+        public string UserFeedbackMessage { get; set; }
+    };
 }

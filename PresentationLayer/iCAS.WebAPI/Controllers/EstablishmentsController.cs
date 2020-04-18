@@ -16,43 +16,51 @@ namespace iCAS.WebAPI.Controllers
         // GET: api/Establishments
         public HttpResponseMessage Get()
         {
-            //return new string[] { "value1", "value2" };
-
             List<Establishment> establishmentList = Micro.BusinessLayer.ICAS.ESTBLMT.EstablishmentManagement.GetInstance.GetEstablishmentList();
 
-            //List<Establishment> establishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("N,T,C,R,S"); //.Find(a=> a.EstbViewEndDate < DateTime.Today).ToList();
-            //List<Establishment> theTotalist = (from abc in establishmentList
-            //                                   where (abc.EstbStatusFlag.Equals("A") && (abc.EstbViewStartDate <= DateTime.Today && abc.EstbViewEndDate >= DateTime.Today))
-            //                                   select abc)                                         
-            //                                   .OrderByDescending(y => y.EstbID)
-            //                                   .ToList();
-
-           
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JArray.FromObject(establishmentList).ToString(), Encoding.UTF8, "application/json")
-            };
+            return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(establishmentList);
+            //return new HttpResponseMessage(HttpStatusCode.OK)
+            //{
+            //    Content = new StringContent(JArray.FromObject(establishmentList).ToString(), Encoding.UTF8, "application/json")
+            //};
         }
 
-        // GET: api/Establishments/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("api/establishment/add/{userid}")]
+        public HttpResponseMessage AddEstablishment([FromBody] Establishment establishment,int userid)
         {
-            return "value";
+            int returnResult = EstablishmentManagement.GetInstance.InsertEstablishment(establishment, userid);
+            if (returnResult>0)
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, returnResult.ToString(), "Establishment added successfully");
+            else
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(false, "-1", "Failed to add the establishment");
+
         }
 
-        // POST: api/Establishments
-        public void Post([FromBody]string value)
+        [HttpPut]
+        [Route("api/establishment/edit")]
+        public HttpResponseMessage EditEstablishment([FromBody] Establishment establishment)
         {
+            return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, "1", "Okay");
+
         }
 
-        // PUT: api/Establishments/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPost]
+        [Route("api/establishments/update")]
+        public HttpResponseMessage UpdateEstablishments([FromBody] Establishments establishments)
         {
+            int totalRecordsEffected = EstablishmentManagement.GetInstance.UpdateEstablishments(establishments);
+            if (totalRecordsEffected>0)
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, totalRecordsEffected, string.Format("Successfully updated {0} records", totalRecordsEffected));
+            else
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(false, totalRecordsEffected, "Failed to update any record");
         }
 
-        // DELETE: api/Establishments/5
-        public void Delete(int id)
+        [HttpDelete]
+        [Route("api/establishment/delete")]
+        public HttpResponseMessage DeleteEstablishment([FromBody] Establishment establishment)
         {
+            return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, "1", "Okay");
         }
     }
 }

@@ -965,6 +965,10 @@
     <Content Include="Themes\Default\Images\UpdateProgress\spinningglobe.gif" />
     <Content Include="Themes\Default\Images\Validate.gif" />
     <Content Include="App_MasterPages\ICAS.Master" />
+    <Content Include="Themes\Profiles\Employee_Profile_3_Photo.jpg" />
+    <Content Include="Themes\Profiles\Employee_Profile_4_Photo.jpg" />
+    <Content Include="Themes\Profiles\Employee_Profile_5_Photo.jpg" />
+    <Content Include="Themes\Profiles\Employee_Profile_6_Photo.jpg" />
     <Content Include="Themes\Profiles\Temp\Employee Profile-1-Photo.jpg" />
     <Content Include="Upload\Approvals.aspx" />
     <Content Include="Upload\VideoGallery.aspx" />

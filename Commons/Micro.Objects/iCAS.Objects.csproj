@@ -122,6 +122,7 @@
     <Compile Include="ICAS\STAFFS\EmpPayrollcomponent.cs" />
     <Compile Include="ICAS\STAFFS\Payrollcomponent.cs" />
     <Compile Include="ICAS\STUDENT\Classes.cs" />
+    <Compile Include="ICAS\STUDENT\StudentInfo.cs" />
     <Compile Include="ICAS\STUDENT\StudentAttendanceReport.cs" />
     <Compile Include="ICAS\STUDENT\StudentSection.cs" />
     <Compile Include="ICAS\STUDENT\StudentAttendance.cs" />

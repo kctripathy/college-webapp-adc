@@ -31,22 +31,35 @@ namespace Micro.Commons
 		{
 			get 
 			{
-				User TheCurrentUser = HttpContext.Current.Session["CurrentUser"] as User;
-				if (TheCurrentUser != null)
-				{
-					if (
-						TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("SUPER ADMIN") ||
-						TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("ADMINISTRATOR") ||
-						TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("UM") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("UNIT MANAGER") ||
-						TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("MD") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("MANAGING DIRECTOR") ||
-						TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CEO") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CHIEF EXECUTIVE OFFICER") ||
-                        TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CHAIRMAN") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("SHIFT SUPERVISOR")
-						)
-					{
-						TheCurrentUser.CanAccessAllOffices = true;
-					}
-				}
-				return TheCurrentUser; 
+                try
+                {
+                    if (HttpContext.Current.Session.Count == 0 || HttpContext.Current.Session["CurrentUser"] is null)
+                    {
+                        return null;
+                    }
+
+                    User TheCurrentUser = HttpContext.Current.Session["CurrentUser"] as User;
+                    if (TheCurrentUser != null)
+                    {
+                        if (
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("SUPER ADMIN") ||
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("ADMINISTRATOR") ||
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("UM") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("UNIT MANAGER") ||
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("MD") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("MANAGING DIRECTOR") ||
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CEO") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CHIEF EXECUTIVE OFFICER") ||
+                            TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("CHAIRMAN") || TheCurrentUser.RoleDescription.ToString().ToUpper().Equals("SHIFT SUPERVISOR")
+                            )
+                        {
+                            TheCurrentUser.CanAccessAllOffices = true;
+                        }
+                    }
+                    return TheCurrentUser;
+                }
+                catch
+                {
+                    return null;
+                }
+				
 				//return BasePage.CurrentLoggedOnUser.TheUser;
 			}
 			set

@@ -6,7 +6,8 @@ using System.Data;
 using System.Data.SqlClient;
 using Micro.Commons;
 using Micro.Objects.ICAS.STUDENT;
-
+using Micro.Objects.ICAS;
+using System.Reflection;
 
 namespace Micro.DataAccessLayer.ICAS.STUDENT
 {
@@ -451,6 +452,39 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
 
             return ReturnValue;
 
+        }
+
+        public int UpdateStudentInfo (StudentInfo studentInfo)
+        {
+            try
+            {
+                int ReturnValue = 0;
+
+                SqlCommand UpdateCommand = new SqlCommand();
+
+                UpdateCommand.CommandType = CommandType.StoredProcedure;
+
+                UpdateCommand.Parameters.Add(GetParameter("ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+
+                UpdateCommand.Parameters.Add(GetParameter("StudentID", SqlDbType.Int, studentInfo.StudentID));
+                UpdateCommand.Parameters.Add(GetParameter("PhoneNumber", SqlDbType.VarChar, studentInfo.PhoneNumber));
+                UpdateCommand.Parameters.Add(GetParameter("Mobile", SqlDbType.VarChar, studentInfo.Mobile));
+                UpdateCommand.Parameters.Add(GetParameter("EmailID", SqlDbType.VarChar, studentInfo.EMailID));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_TownOrCity", SqlDbType.VarChar, studentInfo.Address_Present_TownOrCity));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_DistrictID", SqlDbType.Int, studentInfo.Address_Present_DistrictID));
+                UpdateCommand.Parameters.Add(GetParameter("Address_Present_PinCode", SqlDbType.VarChar, studentInfo.Address_Present_PinCode));
+
+                UpdateCommand.CommandText = "pICAS_Students_Update_StudentInfo";
+                ExecuteStoredProcedure(UpdateCommand);
+
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+
+                return ReturnValue;
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
         }
 
         public int DeleteStudent(Student theStudent)

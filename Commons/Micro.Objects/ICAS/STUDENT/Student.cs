@@ -392,6 +392,12 @@ namespace Micro.Objects.ICAS.STUDENT
             get;
             set;
         }
+        public string SubjectName
+        {
+            get;
+            set;
+        }
+
         public static PropertyInfo[] GetProperties(object obj)
         {
             return obj.GetType().GetProperties();
@@ -403,20 +409,27 @@ namespace Micro.Objects.ICAS.STUDENT
             string class_name = string.Empty;
             switch (classid)
             {
-                case 9: class_name = "+2 FIRST YEAR ARTS"; break;
-                case 2: class_name = "+2 FIRST YEAR SCIENCE"; break;
-                case 10: class_name = "+2 SECOND YEAR ARTS"; break;
-                case 3: class_name = "+2 SECOND YEAR SCIENCE"; break;
-                case 12: class_name = "+3 FIRST YEAR ARTS"; break;
-                case 5: class_name = "+3 FIRST YEAR SCIENCE"; break;
-                case 13: class_name = "+3 SECOND YEAR ARTS"; break;
-                case 6: class_name = "+3 SECOND YEAR SCIENCE"; break;
-                case 14: class_name = "+3 THIRD YEAR ARTS"; break;
-                case 7: class_name = "+3 THIRD YEAR SCIENCE"; break;
+                //THIS IS FOR TSD COLLEGE
+                //case 9: class_name = "+2 FIRST YEAR ARTS"; break;
+                //case 2: class_name = "+2 FIRST YEAR SCIENCE"; break;
+                //case 10: class_name = "+2 SECOND YEAR ARTS"; break;
+                //case 3: class_name = "+2 SECOND YEAR SCIENCE"; break;
+                //case 12: class_name = "+3 FIRST YEAR ARTS"; break;
+                //case 5: class_name = "+3 FIRST YEAR SCIENCE"; break;
+                //case 13: class_name = "+3 SECOND YEAR ARTS"; break;
+                //case 6: class_name = "+3 SECOND YEAR SCIENCE"; break;
+                //case 14: class_name = "+3 THIRD YEAR ARTS"; break;
+                //case 7: class_name = "+3 THIRD YEAR SCIENCE"; break;
+
+                case 2: class_name = "+3 FIRST YEAR ARTS"; break;
+                case 3: class_name = "+3 SECOND YEAR ARTS"; break;
+                case 4: class_name = "+3 THIRD YEAR ARTS"; break;
+
             }
 
             //return string.Format("Class {0}", classid);
             return class_name;
         }
     }  
+    
 } 

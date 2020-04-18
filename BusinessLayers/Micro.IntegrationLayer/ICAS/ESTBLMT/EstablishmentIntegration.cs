@@ -32,7 +32,7 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
                 theestablishment.EstbMessage = dr["EstbMessage"].ToString();
                 if (dr["EstbDate"] != null)
                 {
-                    theestablishment.EstbDate = DateTime.Parse(DateTime.Parse(dr["EstbDate"].ToString()).ToString(MicroConstants.DateFormat));
+                    theestablishment.EstbDate = DateTime.Parse(DateTime.Parse(dr["EstbDate"].ToString()).ToString(MicroConstants.DateTimeFormat));
                 }
 				//if (dr["EstbUploadFile"] != null)
 				//{
@@ -91,6 +91,7 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
             return EstablishmentList;
 
         }
+
         public static List<Establishment> GetEstablishmentListByTypeCode(string typeCode)
         {
             List<Establishment> EstablishmentList = new List<Establishment>();
@@ -105,9 +106,15 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
             return EstablishmentList;
 
         }
+
         public static int InsertEstablishment(Establishment theestablishment)
         {
             return EstablishmentDataAccess.GetInstance.InsertEstablishment(theestablishment);
+        }
+
+        public static int InsertEstablishment(Establishment theestablishment, int userId)
+        {
+            return EstablishmentDataAccess.GetInstance.InsertEstablishment(theestablishment, userId);
         }
 
         public static int UpdateEstablishment(Establishment theestablishment)
@@ -115,7 +122,15 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
             return EstablishmentDataAccess.GetInstance.UpdateEstablishment(theestablishment);
         
         }
+        public static int UpdateEstablishment(int estbid, string filename)
+        {
+            return EstablishmentDataAccess.GetInstance.UpdateEstablishment(estbid, filename);
 
+        }
+        public static int UpdateEstablishments(Establishments establishments)
+        {
+            return EstablishmentDataAccess.GetInstance.UpdateEstablishments(establishments);
+        }
 
         public static int DeleteEstablishment(Establishment theestablishment)
         {

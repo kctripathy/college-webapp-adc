@@ -107,7 +107,10 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         }
 
         #endregion
-
+        public int InsertUsersFeedBack(UserFeedback userFeedback)
+        {
+            return FeedbackMasterIntegration.InsertUsersFeedBack(userFeedback);
+        }
 
     }
 }

@@ -112,6 +112,56 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
 
         }
 
+        public int InsertEstablishment(Establishment oEstb, int userId)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand insCmd = new SqlCommand())
+            {
+                insCmd.CommandType = CommandType.StoredProcedure;
+                insCmd.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                insCmd.Parameters.Add(GetParameter("@ESTB_TITLE", SqlDbType.VarChar, oEstb.EstbTitle));
+                insCmd.Parameters.Add(GetParameter("@ESTB_TYPE_CODE", SqlDbType.VarChar, oEstb.EstbTypeCode));
+                //insCmd.Parameters.Add(GetParameter("@ESTB_DATE", SqlDbType.DateTime, DateTime.Today));
+                insCmd.Parameters.Add(GetParameter("@ESTB_DATE", SqlDbType.DateTime, oEstb.EstbDate));
+                insCmd.Parameters.Add(GetParameter("@ESTB_MESSAGE", SqlDbType.VarChar, oEstb.EstbDescription));
+                insCmd.Parameters.Add(GetParameter("@ESTB_UPLOADED_FILE", SqlDbType.VarBinary, oEstb.EstbUploadFile));
+                insCmd.Parameters.Add(GetParameter("@ESTB_UPLOADED_FILETYPE", SqlDbType.VarChar, oEstb.EstbUploadFileType));
+                insCmd.Parameters.Add(GetParameter("@ESTB_VIEW_START_DATE", SqlDbType.DateTime, DateTime.Today.AddDays(-1)));
+                insCmd.Parameters.Add(GetParameter("@ESTB_VIEW_END_DATE", SqlDbType.DateTime, DateTime.Today.AddDays(3650)));
+                insCmd.Parameters.Add(GetParameter("@ESTBSTATUSFLAG", SqlDbType.VarChar, oEstb.EstbStatusFlag));
+                insCmd.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));
+                insCmd.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, userId));
+                insCmd.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, ""));
+
+                //InsertCommand.Parameters.Add(GetParameter("@IsActive", SqlDbType.Int, 1));
+                //InsertCommand.Parameters.Add(GetParameter("@IsDeleted", SqlDbType.Int, 0));
+                insCmd.CommandText = "[pICAS_Establishments_AddNew]";
+                //TODO: KT: remove hardcode
+                ExecuteStoredProcedure(insCmd);
+
+                ReturnValue = int.Parse(insCmd.Parameters[0].Value.ToString());
+            }
+            return ReturnValue;
+
+        }
+
+        public int UpdateEstablishments(Establishments establishments)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand UpdateCommand = new SqlCommand())
+            {
+                UpdateCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                UpdateCommand.Parameters.Add(GetParameter("@ESTB_IDS", SqlDbType.VarChar, establishments.EstbIDs));
+                UpdateCommand.Parameters.Add(GetParameter("@OPERATION", SqlDbType.VarChar, establishments.Operation));
+                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, establishments.OperationByUserID)); 
+                UpdateCommand.CommandText = "pICAS_Establishments_Update_Status";
+                ExecuteStoredProcedure(UpdateCommand);
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+                return ReturnValue;
+            }
+
+        }
+
         public int UpdateEstablishment(Establishment theestablishment)
         {
             int ReturnValue = 0;
@@ -142,6 +192,25 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
             }
             return ReturnValue;
         
+        }
+
+        public int UpdateEstablishment(int estbid, string filename)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand UpdateCommand = new SqlCommand())
+            {
+                UpdateCommand.CommandType = CommandType.StoredProcedure;
+                UpdateCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                UpdateCommand.Parameters.Add(GetParameter("@EstbID", SqlDbType.Int, estbid));
+                UpdateCommand.Parameters.Add(GetParameter("@FileName", SqlDbType.VarChar, filename));
+                
+                UpdateCommand.CommandText = "pICAS_Establishments_Update_FileName";
+                ExecuteStoredProcedure(UpdateCommand);
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+
+            }
+            return ReturnValue;
+
         }
 
         public int DeleteEstablishment(Establishment theestablishment)

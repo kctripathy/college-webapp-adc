@@ -56,15 +56,15 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Recent Activity";
                 }
-                else if (this.EstbTypeCode.Equals("1"))
+                else if (this.EstbTypeCode.Equals("1") || this.EstbTypeCode.Equals("PAC"))
                 {
-                    _typeCodeDesc = "Article";
+                    _typeCodeDesc = "Article/Column";
                 }
-                else if (this.EstbTypeCode.Equals("2"))
+                else if (this.EstbTypeCode.Equals("2") || this.EstbTypeCode.Equals("PPP"))
                 {
                     _typeCodeDesc = "Project Paper";
                 }
-                else if (this.EstbTypeCode.Equals("3"))
+                else if (this.EstbTypeCode.Equals("3") || this.EstbTypeCode.Equals("PBP") )
                 {
                     _typeCodeDesc = "Book/Proceeding";
                 }
@@ -72,15 +72,15 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Award/Achievment";
                 }
-                else if (this.EstbTypeCode.Equals("5"))
+                else if (this.EstbTypeCode.Equals("5") || this.EstbTypeCode.Equals("PSP"))
                 {
                     _typeCodeDesc = "Seminar Paper";
                 }
-                else if (this.EstbTypeCode.Equals("6"))
+                else if (this.EstbTypeCode.Equals("6") || this.EstbTypeCode.Equals("PSM"))
                 {
                     _typeCodeDesc = "Study Material";
                 }
-                else if (this.EstbTypeCode.Equals("7"))
+                else if (this.EstbTypeCode.Equals("7") || this.EstbTypeCode.Equals("LNK"))
                 {
                     _typeCodeDesc = "Hyperlink";
                 }
@@ -92,11 +92,11 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Downloadable";
                 }
-                else if (this.EstbTypeCode.Equals("IMG"))
+                else if (this.EstbTypeCode.Equals("IMG") || this.EstbTypeCode.Equals("GIM"))
                 {
                     _typeCodeDesc = "Photo";
                 }
-                else if (this.EstbTypeCode.Equals("VDO"))
+                else if (this.EstbTypeCode.Equals("VDO") || this.EstbTypeCode.Equals("GVD"))
                 {
                     _typeCodeDesc = "Video";
                 }
@@ -104,7 +104,42 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Minute of Meeting";
                 }
-
+                else if (this.EstbTypeCode.Equals("RAA"))
+                {
+                    _typeCodeDesc = "Academic Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RSA"))
+                {
+                    _typeCodeDesc = "Sports Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RSO"))
+                {
+                    _typeCodeDesc = "Social Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RCA"))
+                {
+                    _typeCodeDesc = "Cultural Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RYA"))
+                {
+                    _typeCodeDesc = "YRC Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RRA"))
+                {
+                    _typeCodeDesc = "RRC Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RNA"))
+                {
+                    _typeCodeDesc = "NSS Activity";
+                }
+                else if (this.EstbTypeCode.Equals("RSG"))
+                {
+                    _typeCodeDesc = "Scout & Guide Activity";
+                }
+                else if (this.EstbTypeCode.Equals("ROA"))
+                {
+                    _typeCodeDesc = "Other Activity";
+                }
                 return _typeCodeDesc;
             }
         }
@@ -210,6 +245,10 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _desc = "Pending";
                 }
+                else if (this.EstbStatusFlag.Equals("R"))
+                {
+                    _desc = "Rejected";
+                }
                 return _desc;
             }
         }
@@ -302,6 +341,12 @@ namespace Micro.Objects.ICAS.ESTBLMT
             }
         }
     }
-
+    
+    public class Establishments
+    {
+        public string EstbIDs { get; set; }
+        public string Operation { get; set; }
+        public int OperationByUserID { get; set; }
+    }
     
 }
