@@ -163,14 +163,15 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             get
             {
-                if (EstbTitle.Length > EstbTitletZoneMaxLengh)
-                {
-                    return string.Concat(CommonFunctions.StringSplit(EstbTitle, EstbTitletZoneMaxLengh).ToString(), "...");
-                }
-                else
-                {
-                    return EstbTitle;
-                }
+                return EstbTitle;
+                //if (EstbTitle.Length > EstbTitletZoneMaxLengh)
+                //{
+                //    return string.Concat(CommonFunctions.StringSplit(EstbTitle, EstbTitletZoneMaxLengh).ToString(), "...");
+                //}
+                //else
+                //{
+                //    return EstbTitle;
+                //}
             }
 
         }

@@ -58,7 +58,7 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
                 theestablishment.OfficeID =int.Parse( dr["OfficeID"].ToString());
                 theestablishment.CompanyID =int.Parse(dr["CompanyID"].ToString());
                 theestablishment.FileNameWithPath = dr["VC_FIELD2"].ToString();
-                theestablishment.AuthorOrContributorName = dr["EmployeeName"].ToString();
+                theestablishment.AuthorOrContributorName = dr["EmployeeName"].ToString().Trim();
           return theestablishment;
         
         }
