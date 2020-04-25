@@ -112,6 +112,22 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
 
         }
 
+        public int EditEstablishment(Establishment2Edit establishment)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand UpdateCommand = new SqlCommand())
+            {
+                UpdateCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                UpdateCommand.Parameters.Add(GetParameter("@ESTB_ID", SqlDbType.Int, establishment.EstbID));
+                UpdateCommand.Parameters.Add(GetParameter("@ESTB_TITLE", SqlDbType.VarChar, establishment.Title));
+                UpdateCommand.Parameters.Add(GetParameter("@ESTB_DESC", SqlDbType.VarChar, establishment.Description));
+                UpdateCommand.CommandText = "pICAS_Establishments_Update_Record";
+                ExecuteStoredProcedure(UpdateCommand);
+                ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
+                return ReturnValue;
+            }
+        }
+
         public int InsertEstablishment(Establishment oEstb, int userId)
         {
             int ReturnValue = 0;

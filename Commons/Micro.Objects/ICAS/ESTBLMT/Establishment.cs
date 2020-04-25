@@ -349,5 +349,11 @@ namespace Micro.Objects.ICAS.ESTBLMT
         public string Operation { get; set; }
         public int OperationByUserID { get; set; }
     }
-    
+
+    public class Establishment2Edit
+    {
+        public int EstbID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
 }

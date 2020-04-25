@@ -112,6 +112,11 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
             return EstablishmentDataAccess.GetInstance.InsertEstablishment(theestablishment);
         }
 
+        public static int EditEstablishment(Establishment2Edit establishment)
+        {
+            return EstablishmentDataAccess.GetInstance.EditEstablishment(establishment);
+        }
+
         public static int InsertEstablishment(Establishment theestablishment, int userId)
         {
             return EstablishmentDataAccess.GetInstance.InsertEstablishment(theestablishment, userId);

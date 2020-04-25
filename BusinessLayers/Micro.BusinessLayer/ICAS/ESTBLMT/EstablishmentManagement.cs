@@ -126,6 +126,11 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
             return EstablishmentIntegration.InsertEstablishment(theestablishment, userId);
         }
 
+        public int EditEstablishment(Establishment2Edit establishment)
+        {
+            return EstablishmentIntegration.EditEstablishment(establishment);
+        }
+
         public int UpdateEstablishment(Establishment theestablishment)
         {
             return EstablishmentIntegration.UpdateEstablishment(theestablishment);

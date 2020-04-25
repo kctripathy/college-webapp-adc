@@ -37,11 +37,15 @@ namespace iCAS.WebAPI.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("api/establishment/edit")]
-        public HttpResponseMessage EditEstablishment([FromBody] Establishment establishment)
+        public HttpResponseMessage EditEstablishment([FromBody] Establishment2Edit establishment)
         {
-            return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, "1", "Okay");
+            int totalRecordsEffected = EstablishmentManagement.GetInstance.EditEstablishment(establishment);
+            if (totalRecordsEffected > 0)
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(true, totalRecordsEffected, string.Format("Successfully updated {0} record", totalRecordsEffected));
+            else
+                return new iCAS.WebAPI.ResponseMessage().ReturnHttpResponseMessage(false, totalRecordsEffected, "Failed to update any record");
 
         }
 
