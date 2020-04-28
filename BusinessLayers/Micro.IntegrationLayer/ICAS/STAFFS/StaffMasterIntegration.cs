@@ -275,7 +275,18 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                         ObjEmployee.Address_Present_LandMark = dr["Address_Present_LandMark"].ToString();
                         ObjEmployee.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
                         ObjEmployee.Address_Present_Pincode = dr["Address_Present_Pincode"].ToString();
-                        //ObjEmployee.Address_Present_DistrictName = dr["Address_Present_DistrictName"].ToString();
+                        ObjEmployee.Address_Present_DistrictName = dr["Address_Present_DistrictName"].ToString();
+                        //ObjEmployee.Address_Present_StateName = dr["Address_Present_StateName"].ToString();
+                        //ObjEmployee.Address_Present_CountryName = dr["Address_Present_CountryName"].ToString();
+                    }
+
+                    if (dr["Address_Permanent_DistrictID"].ToString() != "")
+                    {
+                        ObjEmployee.Address_Permanent_TownOrCity = dr["Address_Permanent_TownOrCity"].ToString();
+                        ObjEmployee.Address_Permanent_LandMark = dr["Address_Permanent_LandMark"].ToString();
+                        ObjEmployee.Address_Permanent_DistrictID = int.Parse(dr["Address_Permanent_DistrictID"].ToString());
+                        ObjEmployee.Address_Permanent_Pincode = dr["Address_Permanent_Pincode"].ToString();
+                        ObjEmployee.Address_Permanent_DistrictName = dr["Address_Permanent_DistrictName"].ToString();
                         //ObjEmployee.Address_Present_StateName = dr["Address_Present_StateName"].ToString();
                         //ObjEmployee.Address_Present_CountryName = dr["Address_Present_CountryName"].ToString();
                     }
